@@ -26,5 +26,8 @@
     "your_email": "Your email",
     "message": "Message",
     "app_name": "SPA Boilerplate"
+  },
+  "main_page": {
+    "search_label": "Find restaurants near:"
   }
 }
