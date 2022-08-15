@@ -1,5 +1,5 @@
 export type AutocompleteResponse = {
-  locations: Location[];
+  locations?: Location[];
 };
 
 export type Location = {
