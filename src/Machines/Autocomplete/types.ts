@@ -4,6 +4,10 @@ export const EventTypes = {
   AUTOCOMPLETE_SEARCH: 'done.invoke.autocomplete-search-service' as const
 };
 
+type ClearEvent = {
+  type: 'CLEAR';
+};
+
 type SearchEvent = {
   type: 'SEARCH';
   language: string;
@@ -16,7 +20,7 @@ type ResponseEvent = {
   data: ResponsePayload;
 };
 
-export type DataEvent = SearchEvent | ResponseEvent;
+export type DataEvent = ClearEvent | SearchEvent | ResponseEvent;
 
 export type DataContext = {
   results: AutocompleteResponse | null;

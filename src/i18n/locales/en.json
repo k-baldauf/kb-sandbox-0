@@ -28,6 +28,9 @@
     "app_name": "SPA Boilerplate"
   },
   "main_page": {
-    "search_label": "Find restaurants near:"
+    "address": "Address:",
+    "search_label": "Find restaurants near:",
+    "search_error": "There was an error processing your search!",
+    "no_locations_found": "No locations matched your search"
   }
 }

@@ -8,10 +8,12 @@ import { AutocompleteWrapper } from './styles';
 
 interface SearchAutocompleteProps {
   locations: Location[];
+  searchCoordinates: (lat: number, lon: number) => void;
 }
 
 export function SearchAutocomplete({
-  locations
+  locations,
+  searchCoordinates
 }: SearchAutocompleteProps): JSX.Element {
   return (
     <>
@@ -22,6 +24,12 @@ export function SearchAutocomplete({
           <Button
             appearance={Appearance.SubtleOutline}
             iconAfter={<Icon icon={faArrowRight} />}
+            onClick={() =>
+              searchCoordinates(
+                location.payload.geo.lat,
+                location.payload.geo.lon
+              )
+            }
             shouldFitContainer
           >
             {location.text}

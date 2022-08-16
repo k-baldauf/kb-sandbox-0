@@ -3,7 +3,7 @@ import { createMachine, assign } from 'xstate';
 import { getData } from 'utils/api';
 import { SHOP_UNIVERSE_ID } from 'utils/constants';
 import { eventError, extractArgs } from 'utils/machines';
-import { AutocompleteResponse } from 'utils/types';
+import { Shop } from 'utils/types';
 
 import {
   EventTypes,
@@ -14,18 +14,18 @@ import {
 } from './types';
 
 const machineJson = {
-  id: 'autocomplete',
+  id: 'shopSearch',
   predictableActionArguments: true,
   context: {
-    results: null
+    results: []
   },
   initial: 'idle',
   states: {
     idle: {},
     searching: {
       invoke: {
-        src: 'autocompleteSearch',
-        id: 'autocomplete-search-service',
+        src: 'shopSearch',
+        id: 'shop-search-service',
         onDone: [
           { cond: 'hasResults', target: 'results', actions: 'setResults' },
           { target: 'noResults', actions: 'clearResults' }
@@ -38,7 +38,6 @@ const machineJson = {
     error: {}
   },
   on: {
-    CLEAR: { target: 'idle', actions: 'clearResults' },
     SEARCH: [
       { cond: 'hasSearchParams', target: 'searching' },
       { target: 'idle', actions: 'clearResults' }
@@ -49,12 +48,12 @@ const machineJson = {
 const machineActions = {
   clearResults: assign((...args: DataArgs) => {
     extractArgs(args);
-    return { results: null };
+    return { results: [] };
   }),
   setResults: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.AUTOCOMPLETE_SEARCH)
-      throw new Error(eventError(event, EventTypes.AUTOCOMPLETE_SEARCH));
+    if (event.type !== EventTypes.SHOP_SEARCH)
+      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
     return {
       results: event.data.response
     };
@@ -64,26 +63,31 @@ const machineActions = {
 const machineGuards = {
   hasResults: (...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.AUTOCOMPLETE_SEARCH)
-      throw new Error(eventError(event, EventTypes.AUTOCOMPLETE_SEARCH));
-    return !!event.data.response.locations?.length;
+    if (event.type !== EventTypes.SHOP_SEARCH)
+      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    return !!event.data.response.length;
   },
   hasSearchParams: (...args: DataArgs) => {
     const { event } = extractArgs(args);
     if (event.type !== 'SEARCH') throw new Error(eventError(event, 'SEARCH'));
-    return !!event.language && !!event.search;
+    return (
+      !!event.language &&
+      typeof event.lat === 'number' &&
+      typeof event.lon === 'number'
+    );
   }
 };
 
 const machineServices = {
-  autocompleteSearch: async (...args: DataArgs): Promise<ResponsePayload> => {
+  shopSearch: async (...args: DataArgs): Promise<ResponsePayload> => {
     const { event } = extractArgs(args);
     if (event.type !== 'SEARCH') throw new Error(eventError(event, 'SEARCH'));
-    const { language, search } = event;
-    const response = await getData<AutocompleteResponse>(
-      `autocomplete?locale=${language}&shop_universe_id=${SHOP_UNIVERSE_ID}&text=${search}`
+    const { language, lat, lon } = event;
+    const response = await getData<{ shops: Shop[] }>(
+      `shop_search?cuisines[]=kaiseki&geo_latitude=${lat}&geo_longitude=${lon}` +
+        `&shop_universe_id=${SHOP_UNIVERSE_ID}&locale=${language}&per_page=50`
     );
-    return { response };
+    return { response: response.shops };
   }
 };
 
@@ -93,7 +97,7 @@ const machineOptions = {
   services: machineServices
 };
 
-export const autocompleteMachine = createMachine<DataContext, DataEvent>(
+export const shopSearchMachine = createMachine<DataContext, DataEvent>(
   machineJson,
   machineOptions
 );
