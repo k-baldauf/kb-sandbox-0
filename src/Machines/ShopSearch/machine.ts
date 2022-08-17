@@ -1,9 +1,9 @@
 import { createMachine, assign } from 'xstate';
 
-import { getData } from 'utils/api';
-import { SHOP_UNIVERSE_ID } from 'utils/constants';
-import { eventError, extractArgs } from 'utils/machines';
-import { Shop } from 'utils/types';
+import { getData } from '../../utils/api';
+import { SHOP_UNIVERSE_ID, SHOPS_PER_PAGE } from '../../utils/constants';
+import { eventError, extractArgs } from '../../utils/machines';
+import { Shop } from '../../utils/types';
 
 import {
   EventTypes,
@@ -13,12 +13,16 @@ import {
   DataArgs
 } from './types';
 
+const DEFAULT_CONTEXT = {
+  moreAvailable: false,
+  page: 0,
+  results: []
+};
+
 const machineJson = {
   id: 'shopSearch',
   predictableActionArguments: true,
-  context: {
-    results: []
-  },
+  context: DEFAULT_CONTEXT,
   initial: 'idle',
   states: {
     idle: {},
@@ -27,28 +31,68 @@ const machineJson = {
         src: 'shopSearch',
         id: 'shop-search-service',
         onDone: [
-          { cond: 'hasResults', target: 'results', actions: 'setResults' },
-          { target: 'noResults', actions: 'clearResults' }
+          {
+            cond: 'hasResults',
+            target: 'results',
+            actions: ['setResults', 'setPage', 'setMoreAvailable']
+          },
+          { target: 'noResults', actions: 'resetContext' }
         ],
-        onError: { target: 'error' }
+        onError: { target: 'error', actions: 'resetContext' }
       }
     },
-    results: {},
+    results: {
+      on: { MORE: { cond: 'hasMoreAvailable', target: 'searching' } }
+    },
     noResults: {},
     error: {}
   },
   on: {
     SEARCH: [
-      { cond: 'hasSearchParams', target: 'searching' },
-      { target: 'idle', actions: 'clearResults' }
+      {
+        cond: 'hasSearchParams',
+        target: 'searching',
+        actions: ['resetContext', 'setSearchParams']
+      },
+      { target: 'idle', actions: 'resetContext' }
     ]
   }
 };
 
 const machineActions = {
-  clearResults: assign((...args: DataArgs) => {
+  resetContext: assign((...args: DataArgs) => {
     extractArgs(args);
-    return { results: [] };
+    return {
+      language: undefined,
+      lat: undefined,
+      lon: undefined,
+      ...DEFAULT_CONTEXT
+    };
+  }),
+  setMoreAvailable: assign((...args: DataArgs) => {
+    const { event } = extractArgs(args);
+    if (event.type !== EventTypes.SHOP_SEARCH)
+      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    return {
+      moreAvailable: event.data.moreAvailable
+    };
+  }),
+  setPage: assign((...args: DataArgs) => {
+    const { event } = extractArgs(args);
+    if (event.type !== EventTypes.SHOP_SEARCH)
+      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    return {
+      page: event.data.page
+    };
+  }),
+  setSearchParams: assign((...args: DataArgs) => {
+    const { event } = extractArgs(args);
+    if (event.type !== 'SEARCH') throw new Error(eventError(event, 'SEARCH'));
+    return {
+      language: event.language,
+      lat: event.lat,
+      lon: event.lon
+    };
   }),
   setResults: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
@@ -61,6 +105,10 @@ const machineActions = {
 };
 
 const machineGuards = {
+  hasMoreAvailable: (...args: DataArgs) => {
+    const { context } = extractArgs(args);
+    return context.moreAvailable;
+  },
   hasResults: (...args: DataArgs) => {
     const { event } = extractArgs(args);
     if (event.type !== EventTypes.SHOP_SEARCH)
@@ -80,14 +128,20 @@ const machineGuards = {
 
 const machineServices = {
   shopSearch: async (...args: DataArgs): Promise<ResponsePayload> => {
-    const { event } = extractArgs(args);
-    if (event.type !== 'SEARCH') throw new Error(eventError(event, 'SEARCH'));
-    const { language, lat, lon } = event;
-    const response = await getData<{ shops: Shop[] }>(
+    const { context } = extractArgs(args);
+    const { results, language, lat, lon, page } = context;
+    const response = await getData<{
+      shops: Shop[];
+      meta: { record_count: number };
+    }>(
       `shop_search?cuisines[]=kaiseki&geo_latitude=${lat}&geo_longitude=${lon}` +
-        `&shop_universe_id=${SHOP_UNIVERSE_ID}&locale=${language}&per_page=50`
+        `&shop_universe_id=${SHOP_UNIVERSE_ID}&locale=${language}&page=${page}&per_page=${SHOPS_PER_PAGE}`
     );
-    return { response: response.shops };
+    return {
+      response: results.concat(response.shops),
+      page: page + 1,
+      moreAvailable: response.meta.record_count > (page + 1) * SHOPS_PER_PAGE
+    };
   }
 };
 

@@ -2,42 +2,50 @@ import { Input } from '@tablecheck/tablekit-input';
 import { useMachine } from '@xstate/react';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
-import { shopMachine } from 'Machines/Shop/machine';
+import { SearchAutocomplete } from 'Components/SearchAutocomplete';
+import { ShopList } from 'Components/ShopList';
+import { ShopPanel } from 'Components/ShopPanel';
+import { autocompleteMachine } from 'Machines/Autocomplete/machine';
 import { shopSearchMachine } from 'Machines/ShopSearch/machine';
-import { SearchAutocomplete } from 'SearchAutocomplete';
-import { ShopList } from 'ShopList';
-import { ShopPanel } from 'ShopPanel';
-
-import { autocompleteMachine } from '../../Machines/Autocomplete/machine';
+import { shopSlideoutMachine } from 'Machines/ShopSlideout/machine';
 
 import { SearchWrapper, ErrorMessage } from './styles';
 
 export function Search(): JSX.Element {
+  const { location = '' } = useParams();
   const [t, { language }] = useTranslation();
-  const [search, setSearch] = React.useState('');
+  const [search, setSearch] = React.useState(location);
+  const [placeholder, setPlaceholder] = React.useState('');
   const [autocompleteState, autocompleteSend] = useMachine(autocompleteMachine);
   const [shopSearchState, shopSearchSend] = useMachine(shopSearchMachine);
-  const [shopState, shopSend] = useMachine(shopMachine);
+  const [shopSlideoutState, shopSlideoutSend] = useMachine(shopSlideoutMachine);
 
   React.useEffect(() => {
-    // Todo: Sanitize
     autocompleteSend('SEARCH', { language, search });
   }, [language, search, autocompleteSend]);
 
   const searchCoordinates = React.useCallback(
-    (lat: number, lon: number) => {
+    (lat: number, lon: number, selectedItem: string) => {
       shopSearchSend('SEARCH', { language, lat, lon });
       autocompleteSend('CLEAR');
+      setSearch('');
+      setPlaceholder(selectedItem);
     },
-    [autocompleteSend, shopSearchSend, language]
+    [autocompleteSend, shopSearchSend, setSearch, setPlaceholder, language]
+  );
+
+  const loadMoreShops = React.useCallback(
+    () => shopSearchSend('MORE'),
+    [shopSearchSend]
   );
 
   const selectShop = React.useCallback(
     (id: string) => {
-      shopSend('OPEN', { id, language });
+      shopSlideoutSend('OPEN', { id, language });
     },
-    [shopSend, language]
+    [shopSlideoutSend, language]
   );
 
   return (
@@ -48,6 +56,8 @@ export function Search(): JSX.Element {
         shouldFitContainer
         autoFocus
         onChange={(event) => setSearch(event.target.value)}
+        placeholder={placeholder}
+        value={search}
       />
       {(autocompleteState.value === 'searching' ||
         autocompleteState.value === 'results') && (
@@ -67,16 +77,18 @@ export function Search(): JSX.Element {
         <ShopList
           shops={shopSearchState.context.results}
           selectShop={selectShop}
+          moreAvailable={shopSearchState.context.moreAvailable}
+          loadMoreShops={loadMoreShops}
         />
       )}
       <ShopPanel
-        isError={shopState.value === 'error'}
-        isLoading={shopState.value === 'opening'}
-        isOpen={shopState.value !== 'closed'}
+        isError={shopSlideoutState.value === 'error'}
+        isLoading={shopSlideoutState.value === 'opening'}
+        isOpen={shopSlideoutState.value !== 'closed'}
         onClose={() => {
-          shopSend('CLOSE');
+          shopSlideoutSend('CLOSE');
         }}
-        shop={shopState.context.shop}
+        shop={shopSlideoutState.context.shop}
       />
     </SearchWrapper>
   );

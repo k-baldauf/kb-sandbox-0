@@ -11,7 +11,7 @@
       "about": "About"
     },
     "titles": {
-      "headline": "Hello World!"
+      "headline": "Shop Locator"
     },
     "pages": {
       "about_us": "At <0>tablecheck</0> we love connecting diners with restaurants. The purpose of this app is to...",
@@ -29,6 +29,10 @@
   },
   "main_page": {
     "address": "Address:",
+    "loading": "Loading...",
+    "load_more_shops": "Load more results",
+    "location_error": "There was an error loading this location!",
+    "location_close": "Return to search results",
     "search_label": "Find restaurants near:",
     "search_error": "There was an error processing your search!",
     "no_locations_found": "No locations matched your search"

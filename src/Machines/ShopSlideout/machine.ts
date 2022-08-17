@@ -1,9 +1,9 @@
 import { createMachine, assign } from 'xstate';
 
-import { getData } from 'utils/api';
-import { SHOP_UNIVERSE_ID } from 'utils/constants';
-import { eventError, extractArgs } from 'utils/machines';
-import { ExtendedShop } from 'utils/types';
+import { getData } from '../../utils/api';
+import { SHOP_UNIVERSE_ID } from '../../utils/constants';
+import { eventError, extractArgs } from '../../utils/machines';
+import { ExtendedShop } from '../../utils/types';
 
 import {
   EventTypes,
@@ -14,7 +14,7 @@ import {
 } from './types';
 
 const machineJson = {
-  id: 'shop',
+  id: 'shopSlideout',
   predictableActionArguments: true,
   context: {
     shop: null
@@ -25,7 +25,7 @@ const machineJson = {
     opening: {
       invoke: {
         src: 'shopGet',
-        id: 'shop-get-service',
+        id: 'shop-slideout-get-service',
         onDone: [
           { cond: 'hasOneShop', target: 'open', actions: 'setShop' },
           { target: 'error', actions: 'clearShop' }
@@ -98,7 +98,7 @@ const machineOptions = {
   services: machineServices
 };
 
-export const shopMachine = createMachine<DataContext, DataEvent>(
+export const shopSlideoutMachine = createMachine<DataContext, DataEvent>(
   machineJson,
   machineOptions
 );

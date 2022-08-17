@@ -1,10 +1,13 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+import { Appearance, Button } from '@tablecheck/tablekit-button';
+import { Icon } from '@tablecheck/tablekit-icon';
 import { Panel } from '@tablecheck/tablekit-panel';
 import { useTranslation } from 'react-i18next';
 
-import { Headline } from 'Layouts';
-import { getBestTranslation } from 'utils';
-import { PREVIEW_IMAGE_HEIGHT } from 'utils/constants';
-import { ExtendedShop } from 'utils/types';
+import { Headline } from '../../Layouts';
+import { getBestTranslation } from '../../utils';
+import { PREVIEW_IMAGE_HEIGHT } from '../../utils/constants';
+import { ExtendedShop } from '../../utils/types';
 
 import {
   PanelWrapper,
@@ -68,8 +71,18 @@ export function ShopPanel({
             </ShopAddress>
           </>
         )}
-        {(isError || (!isLoading && !shop)) && <>Error</>}
-        {isLoading && <>Loading</>}
+        {(isError || (!isLoading && !shop)) && (
+          <>{t('main_page.location_error')}</>
+        )}
+        {isLoading && <>{t('main_page.loading')}</>}
+        <Button
+          appearance={Appearance.SubtleOutline}
+          iconBefore={<Icon icon={faArrowLeft} />}
+          onClick={onClose}
+          shouldFitContainer
+        >
+          {t('main_page.location_close')}
+        </Button>
       </PanelWrapper>
     </Panel>
   );

@@ -1,9 +1,9 @@
 import { createMachine, assign } from 'xstate';
 
-import { getData } from 'utils/api';
-import { SHOP_UNIVERSE_ID } from 'utils/constants';
-import { eventError, extractArgs } from 'utils/machines';
-import { AutocompleteResponse } from 'utils/types';
+import { getData } from '../../utils/api';
+import { SHOP_UNIVERSE_ID } from '../../utils/constants';
+import { eventError, extractArgs } from '../../utils/machines';
+import { AutocompleteResponse } from '../../utils/types';
 
 import {
   EventTypes,
@@ -81,7 +81,8 @@ const machineServices = {
     if (event.type !== 'SEARCH') throw new Error(eventError(event, 'SEARCH'));
     const { language, search } = event;
     const response = await getData<AutocompleteResponse>(
-      `autocomplete?locale=${language}&shop_universe_id=${SHOP_UNIVERSE_ID}&text=${search}`
+      `autocomplete?locale=${language}&shop_universe_id=${SHOP_UNIVERSE_ID}` +
+        `&text=${encodeURIComponent(search)}`
     );
     return { response };
   }

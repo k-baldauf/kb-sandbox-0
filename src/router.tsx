@@ -32,6 +32,7 @@ export function Router({
         }
       >
         <Route index element={<Home />} />
+        <Route path=":location" element={<Home />} />
         <Route path={AppRoute.About} element={<About />} />
         <Route path={AppRoute.ReportIssue} element={<ReportIssue />} />
       </Route>

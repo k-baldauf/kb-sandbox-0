@@ -11,4 +11,9 @@ export const ShopTitle = styled('h2')`
 
 export const ShopDescription = styled('div')``;
 
-export const ShopAddress = styled('div')``;
+export const ShopAddress = styled('div')`
+  margin: ${Spacing.L2} 0;
+  border: black 1px solid;
+  padding: ${Spacing.L2};
+  width: fit-content;
+`;

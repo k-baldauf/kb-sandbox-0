@@ -1,7 +1,11 @@
-import { Shop } from 'utils/types';
+import { Shop } from '../../utils/types';
 
 export const EventTypes = {
   SHOP_SEARCH: 'done.invoke.shop-search-service' as const
+};
+
+type GenericEvent = {
+  type: 'MORE';
 };
 
 type SearchEvent = {
@@ -11,15 +15,24 @@ type SearchEvent = {
   lon: number;
 };
 
-export type ResponsePayload = { response: Shop[] };
+export type ResponsePayload = {
+  response: Shop[];
+  page: number;
+  moreAvailable: boolean;
+};
 type ResponseEvent = {
   type: typeof EventTypes.SHOP_SEARCH;
   data: ResponsePayload;
 };
 
-export type DataEvent = SearchEvent | ResponseEvent;
+export type DataEvent = GenericEvent | SearchEvent | ResponseEvent;
 
 export type DataContext = {
+  language?: string;
+  lat?: number;
+  lon?: number;
+  moreAvailable: boolean;
+  page: number;
   results: Shop[];
 };
 

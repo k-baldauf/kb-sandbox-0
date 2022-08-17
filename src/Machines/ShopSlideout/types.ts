@@ -1,7 +1,7 @@
-import { ExtendedShop } from 'utils/types';
+import { ExtendedShop } from '../../utils/types';
 
 export const EventTypes = {
-  SHOP_GET: 'done.invoke.shop-get-service' as const
+  SHOP_GET: 'done.invoke.shop-slideout-get-service' as const
 };
 
 type CloseEvent = {

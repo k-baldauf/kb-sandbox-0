@@ -8,6 +8,11 @@ export const slideUp = keyframes`
   to { translate3d(0, 0, 0); }
 `;
 
+export const slideLeft = keyframes`
+  from { transform: translate3d(100vh, 0, 0); }
+  to { translate3d(0, 0, 0); }
+`;
+
 export const slideRight = keyframes`
   from { transform: translate3d(-100vh, 0, 0); }
   to { translate3d(0, 0, 0); }

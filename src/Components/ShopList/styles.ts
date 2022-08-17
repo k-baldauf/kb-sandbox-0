@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FontWeight, Spacing } from '@tablecheck/tablekit-theme';
 
-import { pageTransitionEasing, slideRight } from 'styles';
+import { pageTransitionEasing, slideRight } from '../../styles';
 
 export const ShopListWrapper = styled('div')`
   animation: ${slideRight} ${pageTransitionEasing} 0.5s;

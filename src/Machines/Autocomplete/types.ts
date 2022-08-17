@@ -1,4 +1,4 @@
-import { AutocompleteResponse } from 'utils/types';
+import { AutocompleteResponse } from '../../utils/types';
 
 export const EventTypes = {
   AUTOCOMPLETE_SEARCH: 'done.invoke.autocomplete-search-service' as const
