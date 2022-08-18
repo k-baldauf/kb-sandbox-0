@@ -36,8 +36,13 @@ export type Shop = {
   name: string[];
   content_body_translations: Translation[];
   content_title_translations: Translation[];
+  cuisines: string[];
   tags: string[];
   _id: string;
+  geocode: {
+    lat: number;
+    lon: number;
+  };
 };
 
 export type ExtendedShop = Shop & {

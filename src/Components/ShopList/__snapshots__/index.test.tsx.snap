@@ -1,7 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with more shops available 1`] = `
-@keyframes animation-0 {
+Array [
+  .emotion-0 {
+  margin: 12px 0;
+  gap: 12px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.emotion-4 {
+  gap: 4px;
+}
+
+.emotion-7 {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.175em;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+
+.emotion-7:hover {
+  cursor: pointer;
+}
+
+<div
+    className="emotion-0 emotion-1"
+  >
+    <div
+      className="emotion-2 emotion-3"
+    >
+      <div
+        className="emotion-4 emotion-5"
+      >
+        b
+         
+        <svg
+          aria-hidden="true"
+          className="emotion-6 emotion-7 emotion-8"
+          data-icon="times-circle"
+          data-prefix="far"
+          focusable="false"
+          onClick={[Function]}
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="emotion-2 emotion-3"
+    >
+      <div
+        className="emotion-4 emotion-5"
+      >
+        x
+         
+        <svg
+          aria-hidden="true"
+          className="emotion-6 emotion-7 emotion-8"
+          data-icon="times-circle"
+          data-prefix="far"
+          focusable="false"
+          onClick={[Function]}
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  @keyframes animation-0 {
   from {
     -webkit-transform: translate3d(-100vh, 0, 0);
     -moz-transform: translate3d(-100vh, 0, 0);
@@ -168,7 +261,10 @@ exports[`renders correctly with more shops available 1`] = `
 }
 
 .emotion-8 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: normal;
+  margin: 8px 0;
 }
 
 .emotion-10 {
@@ -212,50 +308,51 @@ exports[`renders correctly with more shops available 1`] = `
 }
 
 <div
-  className="emotion-0 emotion-1"
->
-  <button
-    appearance="subtle-outline"
-    className="emotion-2 emotion-3"
-    color="primary"
-    disabled={false}
-    onClick={[Function]}
-    size="regular"
-    type="button"
+    className="emotion-0 emotion-1"
   >
-    <span
-      className="emotion-4 emotion-5"
+    <button
+      appearance="subtle-outline"
+      className="emotion-2 emotion-3"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+      size="regular"
+      type="button"
     >
       <span
-        className="emotion-6 emotion-7"
+        className="emotion-4 emotion-5"
       >
-        <div
-          className="emotion-8 emotion-9"
-        />
-      </span>
-      <span
-        className="emotion-10 emotion-11"
-      >
-        <svg
-          aria-hidden="true"
-          className="emotion-12 emotion-13"
-          data-icon="arrow-down"
-          data-prefix="fas"
-          focusable="false"
-          role="img"
-          viewBox="0 0 448 512"
-          xmlns="http://www.w2.org/2000/svg"
+        <span
+          className="emotion-6 emotion-7"
         >
-          <path
-            d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
-            fill="currentColor"
-            style={Object {}}
+          <div
+            className="emotion-8 emotion-9"
           />
-        </svg>
+        </span>
+        <span
+          className="emotion-10 emotion-11"
+        >
+          <svg
+            aria-hidden="true"
+            className="emotion-12 emotion-13"
+            data-icon="arrow-down"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w2.org/2000/svg"
+          >
+            <path
+              d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </span>
       </span>
-    </span>
-  </button>
-</div>
+    </button>
+  </div>,
+]
 `;
 
 exports[`renders correctly with one shop 1`] = `
@@ -285,26 +382,130 @@ exports[`renders correctly with one shop 1`] = `
   border: #7935D2 1px solid;
   border-radius: 8;
   padding: 12px;
-  height: calc(100% - 2*4px);
+  height: calc(100% - 2 * 4px);
 }
 
-.emotion-2:hover {
+.emotion-2:hover:not(.no-hover) {
   cursor: pointer;
+  background-color: #7935D230;
 }
 
 .emotion-4 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: normal;
+  margin: 8px 0;
 }
 
 .emotion-6 {
   height: 100%;
 }
 
+.emotion-8 {
+  border-top: #7935D2 1px solid;
+  margin: 4px 16px;
+}
+
+.emotion-11 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: rgba(0, 0, 0, 0.11);
+  color: #323232;
+  background: transparent;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  max-width: 100%;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 0 4px;
+  height: 24px;
+  font-weight: bold;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+  margin: 4px;
+}
+
+.emotion-11:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.emotion-11 .svg-inline--fa {
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-11::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-11::after {
+  border-radius: 8px;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+}
+
+.emotion-13 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  position: relative;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 0 12px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
 <div
   className="emotion-0 emotion-1"
 >
   <button
-    className="emotion-2 emotion-3"
+    className=" emotion-2 emotion-3"
     onClick={[Function]}
   >
     <div
@@ -314,13 +515,181 @@ exports[`renders correctly with one shop 1`] = `
     </div>
     <div
       className="emotion-6 emotion-7"
-    />
+    >
+      <div
+        className="emotion-8 emotion-9"
+      />
+      <button
+        className="emotion-10 emotion-11 emotion-12"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        size="small"
+      >
+        <span
+          className="emotion-13 emotion-14"
+        >
+          <span
+            className="emotion-15 emotion-16"
+          >
+            a
+          </span>
+        </span>
+      </button>
+      <button
+        className="emotion-10 emotion-11 emotion-12"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        size="small"
+      >
+        <span
+          className="emotion-13 emotion-14"
+        >
+          <span
+            className="emotion-15 emotion-16"
+          >
+            b
+          </span>
+        </span>
+      </button>
+      <div
+        className="emotion-8 emotion-9"
+      />
+      <button
+        className="emotion-10 emotion-11 emotion-12"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        size="small"
+      >
+        <span
+          className="emotion-13 emotion-14"
+        >
+          <span
+            className="emotion-15 emotion-16"
+          >
+            x
+          </span>
+        </span>
+      </button>
+      <button
+        className="emotion-10 emotion-11 emotion-12"
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        size="small"
+      >
+        <span
+          className="emotion-13 emotion-14"
+        >
+          <span
+            className="emotion-15 emotion-16"
+          >
+            y
+          </span>
+        </span>
+      </button>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders correctly with several shops 1`] = `
-@keyframes animation-0 {
+Array [
+  .emotion-0 {
+  margin: 12px 0;
+  gap: 12px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.emotion-4 {
+  gap: 4px;
+}
+
+.emotion-7 {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.175em;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+
+.emotion-7:hover {
+  cursor: pointer;
+}
+
+<div
+    className="emotion-0 emotion-1"
+  >
+    <div
+      className="emotion-2 emotion-3"
+    >
+      <div
+        className="emotion-4 emotion-5"
+      >
+        a
+         
+        <svg
+          aria-hidden="true"
+          className="emotion-6 emotion-7 emotion-8"
+          data-icon="times-circle"
+          data-prefix="far"
+          focusable="false"
+          onClick={[Function]}
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="emotion-2 emotion-3"
+    >
+      <div
+        className="emotion-4 emotion-5"
+      >
+        z
+         
+        <svg
+          aria-hidden="true"
+          className="emotion-6 emotion-7 emotion-8"
+          data-icon="times-circle"
+          data-prefix="far"
+          focusable="false"
+          onClick={[Function]}
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </div>
+    </div>
+  </div>,
+  @keyframes animation-0 {
   from {
     -webkit-transform: translate3d(-100vh, 0, 0);
     -moz-transform: translate3d(-100vh, 0, 0);
@@ -346,22 +715,247 @@ exports[`renders correctly with several shops 1`] = `
   border: #7935D2 1px solid;
   border-radius: 8;
   padding: 12px;
-  height: calc(100% - 2*4px);
+  height: calc(100% - 2 * 4px);
 }
 
-.emotion-2:hover {
+.emotion-2:hover:not(.no-hover) {
   cursor: pointer;
+  background-color: #7935D230;
 }
 
 .emotion-4 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: normal;
+  margin: 8px 0;
 }
 
 .emotion-6 {
   height: 100%;
 }
 
-.emotion-32 {
+.emotion-8 {
+  border-top: #7935D2 1px solid;
+  margin: 4px 16px;
+}
+
+.emotion-11 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: rgba(0, 0, 0, 0.11);
+  color: white;
+  background: #7935D2;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  max-width: 100%;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 0 4px;
+  height: 24px;
+  font-weight: bold;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+  margin: 4px;
+}
+
+.emotion-11:hover {
+  background: #5C11A6;
+}
+
+.emotion-11 .emotion-18 {
+  color: white;
+}
+
+.emotion-11 .svg-inline--fa {
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-11::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-11::after {
+  border-radius: 8px;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+}
+
+.emotion-13 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  position: relative;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 0 6px 0 2px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.emotion-17 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-19 {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.175em;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+
+.emotion-22 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: rgba(0, 0, 0, 0.11);
+  color: #323232;
+  background: transparent;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  max-width: 100%;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 0 4px;
+  height: 24px;
+  font-weight: bold;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+  margin: 4px;
+}
+
+.emotion-22:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.emotion-22 .svg-inline--fa {
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-22::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-22::after {
+  border-radius: 8px;
+  -webkit-transition: 120ms ease-in-out;
+  transition: 120ms ease-in-out;
+}
+
+.emotion-26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 0 12px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.emotion-212 {
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -401,18 +995,18 @@ exports[`renders correctly with several shops 1`] = `
   position: relative;
 }
 
-.emotion-32 .svg-inline--fa {
+.emotion-212 .svg-inline--fa {
   width: 16px;
   height: 16px;
 }
 
-.emotion-32::-moz-focus-inner {
+.emotion-212::-moz-focus-inner {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-.emotion-32:before {
+.emotion-212:before {
   content: '';
   display: block;
   position: absolute;
@@ -426,7 +1020,7 @@ exports[`renders correctly with several shops 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-32:after {
+.emotion-212:after {
   content: '';
   display: block;
   position: absolute;
@@ -438,44 +1032,44 @@ exports[`renders correctly with several shops 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-32,
-.emotion-32:before {
+.emotion-212,
+.emotion-212:before {
   border-radius: 8px;
 }
 
-.emotion-32:after {
+.emotion-212:after {
   border-radius: 10px;
 }
 
-.emotion-32,
-.emotion-32:focus {
+.emotion-212,
+.emotion-212:focus {
   color: #7935D2;
   border-color: #7935D2;
   background: transparent;
 }
 
-.emotion-32:hover,
-.emotion-32:hover:focus {
+.emotion-212:hover,
+.emotion-212:hover:focus {
   background: rgba(121,53,210,0.1);
 }
 
-.emotion-32:active,
-.emotion-32:active:focus {
+.emotion-212:active,
+.emotion-212:active:focus {
   background: rgba(121,53,210,0.2);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-.emotion-32,
-.emotion-32:focus {
+.emotion-212,
+.emotion-212:focus {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.11);
 }
 
-.emotion-32:focus::after {
+.emotion-212:focus::after {
   border: 2px solid #5192FC;
 }
 
-.emotion-34 {
+.emotion-214 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -496,7 +1090,7 @@ exports[`renders correctly with several shops 1`] = `
   justify-content: center;
 }
 
-.emotion-36 {
+.emotion-216 {
   margin: 0 8px 0 0;
   max-width: 100%;
   overflow: hidden;
@@ -507,7 +1101,7 @@ exports[`renders correctly with several shops 1`] = `
   transition: opacity 0.3s;
 }
 
-.emotion-40 {
+.emotion-220 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -537,151 +1131,617 @@ exports[`renders correctly with several shops 1`] = `
   transition: opacity 0.3s;
 }
 
-.emotion-42 {
-  display: inline-block;
-  font-size: inherit;
-  overflow: visible;
-  vertical-align: -0.175em;
-  height: 16px;
-  width: 16px;
-  font-size: 16px;
-}
-
 <div
-  className="emotion-0 emotion-1"
->
-  <button
-    className="emotion-2 emotion-3"
-    onClick={[Function]}
+    className="emotion-0 emotion-1"
   >
-    <div
-      className="emotion-4 emotion-5"
+    <button
+      className=" emotion-2 emotion-3"
+      onClick={[Function]}
     >
-      4 name
-    </div>
-    <div
-      className="emotion-6 emotion-7"
-    />
-  </button>
-  <button
-    className="emotion-2 emotion-3"
-    onClick={[Function]}
-  >
-    <div
-      className="emotion-4 emotion-5"
-    >
-      2 name
-    </div>
-    <div
-      className="emotion-6 emotion-7"
-    />
-  </button>
-  <button
-    className="emotion-2 emotion-3"
-    onClick={[Function]}
-  >
-    <div
-      style={
-        Object {
-          "background": "url('1.jpg') center",
-          "backgroundSize": "cover",
-          "height": "100px",
-        }
-      }
-    />
-    <div
-      className="emotion-4 emotion-5"
-    >
-      1 name
-    </div>
-    <div
-      className="emotion-6 emotion-7"
-    />
-  </button>
-  <button
-    className="emotion-2 emotion-3"
-    onClick={[Function]}
-  >
-    <div
-      style={
-        Object {
-          "background": "url('3.jpg') center",
-          "backgroundSize": "cover",
-          "height": "100px",
-        }
-      }
-    />
-    <div
-      className="emotion-4 emotion-5"
-    >
-      3 name
-    </div>
-    <div
-      className="emotion-6 emotion-7"
-    />
-  </button>
-  <button
-    className="emotion-2 emotion-3"
-    onClick={[Function]}
-  >
-    <div
-      style={
-        Object {
-          "background": "url('5.jpg') center",
-          "backgroundSize": "cover",
-          "height": "100px",
-        }
-      }
-    />
-    <div
-      className="emotion-4 emotion-5"
-    >
-      5 name
-    </div>
-    <div
-      className="emotion-6 emotion-7"
-    />
-  </button>
-  <button
-    appearance="subtle-outline"
-    className="emotion-32 emotion-33"
-    color="primary"
-    disabled={false}
-    onClick={[Function]}
-    size="regular"
-    type="button"
-  >
-    <span
-      className="emotion-34 emotion-35"
-    >
-      <span
-        className="emotion-36 emotion-37"
+      <div
+        className="emotion-4 emotion-5"
+      >
+        4 name
+      </div>
+      <div
+        className="emotion-6 emotion-7"
       >
         <div
-          className="emotion-4 emotion-5"
+          className="emotion-8 emotion-9"
         />
-      </span>
-      <span
-        className="emotion-40 emotion-41"
-      >
-        <svg
-          aria-hidden="true"
-          className="emotion-42 emotion-43"
-          data-icon="arrow-down"
-          data-prefix="fas"
-          focusable="false"
-          role="img"
-          viewBox="0 0 448 512"
-          xmlns="http://www.w2.org/2000/svg"
+        <button
+          className="emotion-10 emotion-11 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
         >
-          <path
-            d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
-            fill="currentColor"
-            style={Object {}}
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-15 emotion-16"
+            >
+              a
+            </span>
+            <span
+              className="emotion-17 emotion-18"
+            >
+              <svg
+                aria-hidden="true"
+                className="emotion-19 emotion-20"
+                data-icon="times"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 352 512"
+                xmlns="http://www.w2.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              b
+            </span>
+          </span>
+        </button>
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              x
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              y
+            </span>
+          </span>
+        </button>
+      </div>
+    </button>
+    <button
+      className=" emotion-2 emotion-3"
+      onClick={[Function]}
+    >
+      <div
+        className="emotion-4 emotion-5"
+      >
+        2 name
+      </div>
+      <div
+        className="emotion-6 emotion-7"
+      >
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-11 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-15 emotion-16"
+            >
+              a
+            </span>
+            <span
+              className="emotion-17 emotion-18"
+            >
+              <svg
+                aria-hidden="true"
+                className="emotion-19 emotion-20"
+                data-icon="times"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 352 512"
+                xmlns="http://www.w2.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              b
+            </span>
+          </span>
+        </button>
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              x
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              y
+            </span>
+          </span>
+        </button>
+      </div>
+    </button>
+    <button
+      className=" emotion-2 emotion-3"
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "background": "url('1.jpg') center",
+            "backgroundSize": "cover",
+            "height": "100px",
+          }
+        }
+      />
+      <div
+        className="emotion-4 emotion-5"
+      >
+        1 name
+      </div>
+      <div
+        className="emotion-6 emotion-7"
+      >
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-11 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-15 emotion-16"
+            >
+              a
+            </span>
+            <span
+              className="emotion-17 emotion-18"
+            >
+              <svg
+                aria-hidden="true"
+                className="emotion-19 emotion-20"
+                data-icon="times"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 352 512"
+                xmlns="http://www.w2.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              b
+            </span>
+          </span>
+        </button>
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              x
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              y
+            </span>
+          </span>
+        </button>
+      </div>
+    </button>
+    <button
+      className=" emotion-2 emotion-3"
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "background": "url('3.jpg') center",
+            "backgroundSize": "cover",
+            "height": "100px",
+          }
+        }
+      />
+      <div
+        className="emotion-4 emotion-5"
+      >
+        3 name
+      </div>
+      <div
+        className="emotion-6 emotion-7"
+      >
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-11 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-15 emotion-16"
+            >
+              a
+            </span>
+            <span
+              className="emotion-17 emotion-18"
+            >
+              <svg
+                aria-hidden="true"
+                className="emotion-19 emotion-20"
+                data-icon="times"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 352 512"
+                xmlns="http://www.w2.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              b
+            </span>
+          </span>
+        </button>
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              x
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              y
+            </span>
+          </span>
+        </button>
+      </div>
+    </button>
+    <button
+      className=" emotion-2 emotion-3"
+      onClick={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "background": "url('5.jpg') center",
+            "backgroundSize": "cover",
+            "height": "100px",
+          }
+        }
+      />
+      <div
+        className="emotion-4 emotion-5"
+      >
+        5 name
+      </div>
+      <div
+        className="emotion-6 emotion-7"
+      >
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-11 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-15 emotion-16"
+            >
+              a
+            </span>
+            <span
+              className="emotion-17 emotion-18"
+            >
+              <svg
+                aria-hidden="true"
+                className="emotion-19 emotion-20"
+                data-icon="times"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 352 512"
+                xmlns="http://www.w2.org/2000/svg"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              b
+            </span>
+          </span>
+        </button>
+        <div
+          className="emotion-8 emotion-9"
+        />
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              x
+            </span>
+          </span>
+        </button>
+        <button
+          className="emotion-10 emotion-22 emotion-12"
+          onClick={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          size="small"
+        >
+          <span
+            className="emotion-13 emotion-14"
+          >
+            <span
+              className="emotion-26 emotion-16"
+            >
+              y
+            </span>
+          </span>
+        </button>
+      </div>
+    </button>
+    <button
+      appearance="subtle-outline"
+      className="emotion-212 emotion-213"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+      size="regular"
+      type="button"
+    >
+      <span
+        className="emotion-214 emotion-215"
+      >
+        <span
+          className="emotion-216 emotion-217"
+        >
+          <div
+            className="emotion-4 emotion-219"
           />
-        </svg>
+        </span>
+        <span
+          className="emotion-220 emotion-221"
+        >
+          <svg
+            aria-hidden="true"
+            className="emotion-19 emotion-20"
+            data-icon="arrow-down"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w2.org/2000/svg"
+          >
+            <path
+              d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+        </span>
       </span>
-    </span>
-  </button>
-</div>
+    </button>
+  </div>,
+]
 `;

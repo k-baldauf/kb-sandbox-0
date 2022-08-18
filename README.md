@@ -6,9 +6,12 @@ DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
 
 - Search for a location
 - View nearby restaurants, including loading more after scrolling to the bottom
+- I intentionally allowed the user to see the suggested locations while the list of restaurants remains on the screen
 - View details about a restaurant
+- Get directions to a restaurant (via Google Maps)
+- Filter searches by tag or by cuisine type
 
-- Main tech stack: React, TypeScript, Emotion, i18n
+- Main tech stack: React, TypeScript, Emotion, i18n, xState
 - Tablekit integration with FontAwesome icons and Dark Mode
 - Basic localized routing
 - Basic layout with footer, top and side navs
@@ -45,10 +48,14 @@ Tests can be run via `npm test`. This includes unit tests and snapshot tests.
 ## Future work
 
 - Currently the app doesn't unrender previously-loaded restaurants. This could get expensive memory-wise after enough additional loads. In the ideal case, we would start to remove from both the DOM and the app's memory as we load in more restaurants.
+- One could also implement this as an infinite scroll, though I chose not to in this case.
 - As a related nice-to-have, a "Return to top" button or otherwise easy way to access the search after scrolling for a while.
+- I couldn't figure out how to construct the URL parameters for searching multiple tags, so right now the app only allows one at a time by design.
 - Addresses always seemed to be in Japanese without any localization; lacking cues, I made no attempt to have the app switch smartly.
 - I only added localization for English and (basic) Japanese for the new text fields I added; other supported languages should be filled out as well (and the Japanese should be fixed by someone with more fluency than me).
-- The app could use TLC from a designer overall; in particular the panel is rather bland.
+- The app could use TLC from a designer overall; in particular the panel is rather bland and the loading states are very basic.
+- Add a script to update jest snapshots
+- Add functional tests
 
 ## Deploy to production
 

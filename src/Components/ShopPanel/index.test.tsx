@@ -49,7 +49,9 @@ const shopGenerator: (index: number, hasImage: boolean) => ExtendedShop = (
     region: `region ${index}`,
     postal_code: `${index}${index}${index}`
   },
-  tags: []
+  cuisines: [],
+  tags: [],
+  geocode: { lon: 0, lat: 0 }
 });
 
 const noop = () => {
@@ -69,6 +71,7 @@ test('renders correctly when open with no image', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError={false}
           isLoading={false}
           isOpen
@@ -86,6 +89,7 @@ test('renders correctly when open with an image', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError={false}
           isLoading={false}
           isOpen
@@ -103,6 +107,7 @@ test('renders correctly when loading', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError={false}
           isLoading
           isOpen
@@ -120,6 +125,7 @@ test('renders the error when erroring', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError
           isLoading={false}
           isOpen
@@ -137,6 +143,7 @@ test('renders the error when there should be a shop but is not', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError={false}
           isLoading={false}
           isOpen
@@ -154,6 +161,7 @@ test('renders correctly when closed', () => {
     .create(
       <Wrapper>
         <ShopPanel
+          fromLocation={[0, 0]}
           isError={false}
           isLoading={false}
           isOpen={false}

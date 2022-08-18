@@ -22,7 +22,7 @@ const DEFAULT_CONTEXT = {
 const machineJson = {
   id: 'shopSearch',
   predictableActionArguments: true,
-  context: DEFAULT_CONTEXT,
+  context: { ...DEFAULT_CONTEXT, tags: [], cuisines: [] },
   initial: 'idle',
   states: {
     idle: {},
@@ -48,6 +48,14 @@ const machineJson = {
     error: {}
   },
   on: {
+    CHANGEFILTER: [
+      {
+        cond: 'canRerunSearch',
+        target: 'searching',
+        actions: ['changeFilter', 'setContextToRerunSearch']
+      },
+      { actions: 'changeFilter' }
+    ],
     SEARCH: [
       {
         cond: 'hasSearchParams',
@@ -60,12 +68,29 @@ const machineJson = {
 };
 
 const machineActions = {
+  changeFilter: assign((...args: DataArgs) => {
+    const { context, event } = extractArgs(args);
+    if (event.type !== 'CHANGEFILTER')
+      throw new Error(eventError(event, 'CHANGEFILTER'));
+    const index = context[event.filter].indexOf(event.tag);
+    return {
+      // I couldn't figure out how to format the url parameter, so limit this to one for now
+      [event.filter]: index === -1 ? [event.tag] : []
+    };
+  }),
   resetContext: assign((...args: DataArgs) => {
     extractArgs(args);
     return {
       language: undefined,
       lat: undefined,
       lon: undefined,
+      ...DEFAULT_CONTEXT
+    };
+  }),
+  setContextToRerunSearch: assign((...args: DataArgs) => {
+    const { context } = extractArgs(args);
+    return {
+      ...context,
       ...DEFAULT_CONTEXT
     };
   }),
@@ -105,6 +130,14 @@ const machineActions = {
 };
 
 const machineGuards = {
+  canRerunSearch: (...args: DataArgs) => {
+    const { context } = extractArgs(args);
+    return (
+      !!context.language &&
+      typeof context.lat === 'number' &&
+      typeof context.lon === 'number'
+    );
+  },
   hasMoreAvailable: (...args: DataArgs) => {
     const { context } = extractArgs(args);
     return context.moreAvailable;
@@ -129,13 +162,17 @@ const machineGuards = {
 const machineServices = {
   shopSearch: async (...args: DataArgs): Promise<ResponsePayload> => {
     const { context } = extractArgs(args);
-    const { results, language, lat, lon, page } = context;
+    const { results, language, lat, lon, page, cuisines, tags } = context;
+    const cuisinesArg = cuisines.length
+      ? `&cuisines[]=${cuisines.join(',')}`
+      : '';
+    const tagsArg = tags.length ? `&tags[]=${tags.join(',')}` : '';
     const response = await getData<{
       shops: Shop[];
       meta: { record_count: number };
     }>(
-      `shop_search?cuisines[]=kaiseki&geo_latitude=${lat}&geo_longitude=${lon}` +
-        `&shop_universe_id=${SHOP_UNIVERSE_ID}&locale=${language}&page=${page}&per_page=${SHOPS_PER_PAGE}`
+      `shop_search?geo_latitude=${lat}&geo_longitude=${lon}&shop_universe_id=${SHOP_UNIVERSE_ID}` +
+        `&locale=${language}&page=${page}&per_page=${SHOPS_PER_PAGE}${tagsArg}${cuisinesArg}`
     );
     return {
       response: results.concat(response.shops),

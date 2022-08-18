@@ -1,7 +1,9 @@
+import { useTheme } from '@emotion/react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { Appearance, Button } from '@tablecheck/tablekit-button';
 import { Icon } from '@tablecheck/tablekit-icon';
 import { Panel } from '@tablecheck/tablekit-panel';
+import { Link } from '@tablecheck/tablekit-typography';
 import { useTranslation } from 'react-i18next';
 
 import { Headline } from '../../Layouts';
@@ -19,6 +21,7 @@ import {
 } from './styles';
 
 interface ShopPanelProps {
+  fromLocation: [lat: number | undefined, lon: number | undefined];
   isError: boolean;
   isLoading: boolean;
   isOpen: boolean;
@@ -27,6 +30,7 @@ interface ShopPanelProps {
 }
 
 export function ShopPanel({
+  fromLocation,
   isError,
   isLoading,
   isOpen,
@@ -34,6 +38,13 @@ export function ShopPanel({
   shop
 }: ShopPanelProps): JSX.Element {
   const [t, { language }] = useTranslation();
+  const { isDark } = useTheme();
+
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&${
+    typeof fromLocation[0] === 'number' && typeof fromLocation[1] === 'number'
+      ? `origin=${fromLocation.join(',')}&`
+      : ''
+  }destination=${shop?.geocode.lat},${shop?.geocode.lon}`;
 
   return (
     <Panel
@@ -70,7 +81,7 @@ export function ShopPanel({
                 {getBestTranslation(shop.content_body_translations, language)
                   ?.translation || ''}
               </ShopDescription>
-              <ShopAddress>
+              <ShopAddress className={isDark ? 'dark-theme' : ''}>
                 <div>{t('main_page.address')}</div>
                 <div>{shop.address.street}</div>
                 <div>{shop.address.street2}</div>
@@ -78,6 +89,9 @@ export function ShopPanel({
                 <div>{shop.address.region}</div>
                 <div>{shop.address.country}</div>
                 <div>{shop.address.postal_code}</div>
+                <Link href={googleMapsUrl}>
+                  {t('main_page.get_directions')}
+                </Link>
               </ShopAddress>
             </ScrollableContent>
           </>
@@ -88,7 +102,7 @@ export function ShopPanel({
         {isLoading && (
           <ScrollableContent>{t('main_page.loading')}</ScrollableContent>
         )}
-        <FixedContent>
+        <FixedContent className="fixed-ltr">
           <Button
             appearance={Appearance.SubtleOutline}
             iconBefore={<Icon icon={faArrowLeft} />}

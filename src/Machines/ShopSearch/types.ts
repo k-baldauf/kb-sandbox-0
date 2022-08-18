@@ -8,6 +8,12 @@ type GenericEvent = {
   type: 'MORE';
 };
 
+type ChangeFilterEvent = {
+  type: 'CHANGEFILTER';
+  tag: string;
+  filter: 'tags' | 'cuisines';
+};
+
 type SearchEvent = {
   type: 'SEARCH';
   language: string;
@@ -25,7 +31,11 @@ type ResponseEvent = {
   data: ResponsePayload;
 };
 
-export type DataEvent = GenericEvent | SearchEvent | ResponseEvent;
+export type DataEvent =
+  | GenericEvent
+  | ChangeFilterEvent
+  | SearchEvent
+  | ResponseEvent;
 
 export type DataContext = {
   language?: string;
@@ -34,6 +44,8 @@ export type DataContext = {
   moreAvailable: boolean;
   page: number;
   results: Shop[];
+  tags: string[];
+  cuisines: string[];
 };
 
 export type DataArgs = [DataContext, DataEvent];

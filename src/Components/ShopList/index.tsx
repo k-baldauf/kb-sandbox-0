@@ -1,69 +1,75 @@
+import '@tablecheck/tablekit-free-icon-config';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons/faArrowDown';
 import { Appearance, Button } from '@tablecheck/tablekit-button';
 import { Icon } from '@tablecheck/tablekit-icon';
 import { useTranslation } from 'react-i18next';
 
-import { getBestTranslation } from '../../utils';
-import { PREVIEW_IMAGE_HEIGHT } from '../../utils/constants';
+import { SearchFilter } from 'Components/SearchFilter';
+import { ShopItem } from 'Components/ShopItem';
+
 import { Shop } from '../../utils/types';
 
-import {
-  ShopListWrapper,
-  ShopItem,
-  ShopName,
-  ShopTag,
-  TagContainer
-} from './styles';
+import { ShopListWrapper, ShopName, FiltersContainer } from './styles';
 
 interface ShopListProps {
   loadMoreShops: () => void;
   moreAvailable: boolean;
   shops: Shop[];
+  selectedCuisines: string[];
+  selectedTags: string[];
   selectShop: (id: string) => void;
+  toggleFilter: (tag: string, filter: string) => void;
 }
 
 export function ShopList({
   loadMoreShops,
   moreAvailable,
   shops,
-  selectShop
+  selectedCuisines,
+  selectedTags,
+  selectShop,
+  toggleFilter
 }: ShopListProps): JSX.Element {
-  const [t, { language }] = useTranslation();
+  const [t] = useTranslation();
 
   return (
-    <ShopListWrapper>
-      {shops.map((shop) => (
-        <ShopItem key={shop._id} onClick={() => selectShop(shop._id)}>
-          {shop.search_image && (
-            <div
-              style={{
-                background: `url('${shop.search_image}') center`,
-                backgroundSize: `cover`,
-                height: PREVIEW_IMAGE_HEIGHT
-              }}
-            />
-          )}
-          <ShopName>
-            {getBestTranslation(shop.name_translations, language)
-              ?.translation || ''}
-          </ShopName>
-          <TagContainer>
-            {shop.tags.map((tag) => (
-              <ShopTag key={tag}>{tag}</ShopTag>
-            ))}
-          </TagContainer>
-        </ShopItem>
-      ))}
-      {moreAvailable && (
-        <Button
-          onClick={loadMoreShops}
-          appearance={Appearance.SubtleOutline}
-          iconAfter={<Icon icon={faArrowDown} />}
-          shouldFitContainer
-        >
-          <ShopName>{t('main_page.load_more_shops')}</ShopName>
-        </Button>
+    <>
+      {(!!selectedCuisines.length || !!selectedTags.length) && (
+        <FiltersContainer>
+          <SearchFilter
+            label={t('main_page.cuisines_label')}
+            selectedFilters={selectedCuisines}
+            toggleFilter={(cuisine) => toggleFilter(cuisine, 'cuisines')}
+          />
+          <SearchFilter
+            label={t('main_page.tags_label')}
+            selectedFilters={selectedTags}
+            toggleFilter={(tag) => toggleFilter(tag, 'tags')}
+          />
+        </FiltersContainer>
       )}
-    </ShopListWrapper>
+      <ShopListWrapper>
+        {shops.map((shop) => (
+          <ShopItem
+            key={shop._id}
+            shop={shop}
+            selectedCuisines={selectedCuisines}
+            selectedTags={selectedTags}
+            selectShop={selectShop}
+            toggleFilter={toggleFilter}
+          />
+        ))}
+        {moreAvailable && (
+          <Button
+            onClick={loadMoreShops}
+            appearance={Appearance.SubtleOutline}
+            iconAfter={<Icon icon={faArrowDown} />}
+            shouldFitContainer
+          >
+            <ShopName>{t('main_page.load_more_shops')}</ShopName>
+          </Button>
+        )}
+      </ShopListWrapper>
+    </>
   );
 }

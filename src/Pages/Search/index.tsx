@@ -1,4 +1,5 @@
-import { Input } from '@tablecheck/tablekit-input';
+import { useTheme } from '@emotion/react';
+import { Appearance, Input } from '@tablecheck/tablekit-input';
 import { useMachine } from '@xstate/react';
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +19,7 @@ export function Search(): JSX.Element {
   const [shopSearchState, shopSearchSend] = useMachine(shopSearchMachine);
   const [shopSlideoutState, shopSlideoutSend] = useMachine(shopSlideoutMachine);
 
+  const { isRtl } = useTheme();
   const { location = '' } = useParams();
   const [t, { language }] = useTranslation();
   const [search, setSearch] = React.useState(location);
@@ -37,6 +39,12 @@ export function Search(): JSX.Element {
     [autocompleteSend, shopSearchSend, setSearch, setPlaceholder, language]
   );
 
+  const toggleFilter = React.useCallback(
+    (tag: string, filter: string) =>
+      shopSearchSend('CHANGEFILTER', { tag, filter }),
+    [shopSearchSend]
+  );
+
   const loadMoreShops = React.useCallback(
     () => shopSearchSend('MORE'),
     [shopSearchSend]
@@ -50,7 +58,7 @@ export function Search(): JSX.Element {
   );
 
   return (
-    <SearchWrapper>
+    <SearchWrapper className={isRtl ? 'rtl' : ''}>
       <Input
         label={t('main_page.search_label')}
         type="search"
@@ -59,6 +67,11 @@ export function Search(): JSX.Element {
         onChange={(event) => setSearch(event.target.value)}
         placeholder={placeholder}
         value={search}
+        appearance={
+          shopSearchState.value === 'searching'
+            ? Appearance.Loading
+            : Appearance.Default
+        }
       />
       {(autocompleteState.value === 'searching' ||
         autocompleteState.value === 'results') && (
@@ -79,6 +92,9 @@ export function Search(): JSX.Element {
         <ShopList
           shops={shopSearchState.context.results}
           selectShop={selectShop}
+          selectedCuisines={shopSearchState.context.cuisines}
+          selectedTags={shopSearchState.context.tags}
+          toggleFilter={toggleFilter}
           moreAvailable={shopSearchState.context.moreAvailable}
           loadMoreShops={loadMoreShops}
         />
@@ -91,6 +107,10 @@ export function Search(): JSX.Element {
           shopSlideoutSend('CLOSE');
         }}
         shop={shopSlideoutState.context.shop}
+        fromLocation={[
+          shopSearchState.context.lat,
+          shopSearchState.context.lon
+        ]}
       />
     </SearchWrapper>
   );

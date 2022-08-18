@@ -92,6 +92,10 @@ exports[`renders correctly when loading 1`] = `
   flex-grow: 0;
 }
 
+.emotion-6.fixed-ltr {
+  direction: ltr;
+}
+
 .emotion-8 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -292,7 +296,7 @@ exports[`renders correctly when loading 1`] = `
       main_page.loading
     </div>
     <div
-      className="emotion-6 emotion-7"
+      className="fixed-ltr emotion-6 emotion-7"
     >
       <button
         appearance="subtle-outline"
@@ -394,6 +398,10 @@ exports[`renders correctly when open with an image 1`] = `
   flex-grow: 0;
 }
 
+.emotion-4.fixed-ltr {
+  direction: ltr;
+}
+
 .emotion-6 {
   font-size: 36px;
   line-height: 48px;
@@ -435,7 +443,40 @@ exports[`renders correctly when open with an image 1`] = `
   width: fit-content;
 }
 
-.emotion-18 {
+.emotion-14.dark-theme {
+  border: white 1px solid;
+}
+
+.emotion-16 {
+  color: #5C11A6;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  background-image: linear-gradient(currentColor, currentColor);
+  -webkit-background-position: 0% 100%;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 0% 0.1em;
+  background-size: 0% 0.1em;
+  -webkit-transition: background-size 150ms ease-in-out;
+  transition: background-size 150ms ease-in-out;
+}
+
+.emotion-16:hover,
+.emotion-16:focus {
+  -webkit-background-size: 100% 0.1em;
+  background-size: 100% 0.1em;
+}
+
+.emotion-16:focus {
+  outline: none;
+}
+
+.emotion-16:visited {
+  color: #276BE5;
+}
+
+.emotion-20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -475,18 +516,18 @@ exports[`renders correctly when open with an image 1`] = `
   position: relative;
 }
 
-.emotion-18 .svg-inline--fa {
+.emotion-20 .svg-inline--fa {
   width: 16px;
   height: 16px;
 }
 
-.emotion-18::-moz-focus-inner {
+.emotion-20::-moz-focus-inner {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-.emotion-18:before {
+.emotion-20:before {
   content: '';
   display: block;
   position: absolute;
@@ -500,7 +541,7 @@ exports[`renders correctly when open with an image 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-18:after {
+.emotion-20:after {
   content: '';
   display: block;
   position: absolute;
@@ -512,44 +553,44 @@ exports[`renders correctly when open with an image 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-18,
-.emotion-18:before {
+.emotion-20,
+.emotion-20:before {
   border-radius: 8px;
 }
 
-.emotion-18:after {
+.emotion-20:after {
   border-radius: 10px;
 }
 
-.emotion-18,
-.emotion-18:focus {
+.emotion-20,
+.emotion-20:focus {
   color: #7935D2;
   border-color: #7935D2;
   background: transparent;
 }
 
-.emotion-18:hover,
-.emotion-18:hover:focus {
+.emotion-20:hover,
+.emotion-20:hover:focus {
   background: rgba(121,53,210,0.1);
 }
 
-.emotion-18:active,
-.emotion-18:active:focus {
+.emotion-20:active,
+.emotion-20:active:focus {
   background: rgba(121,53,210,0.2);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-.emotion-18,
-.emotion-18:focus {
+.emotion-20,
+.emotion-20:focus {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.11);
 }
 
-.emotion-18:focus::after {
+.emotion-20:focus::after {
   border: 2px solid #5192FC;
 }
 
-.emotion-20 {
+.emotion-22 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -570,7 +611,7 @@ exports[`renders correctly when open with an image 1`] = `
   justify-content: center;
 }
 
-.emotion-22 {
+.emotion-24 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -600,7 +641,7 @@ exports[`renders correctly when open with an image 1`] = `
   transition: opacity 0.3s;
 }
 
-.emotion-24 {
+.emotion-26 {
   display: inline-block;
   font-size: inherit;
   overflow: visible;
@@ -610,7 +651,7 @@ exports[`renders correctly when open with an image 1`] = `
   font-size: 16px;
 }
 
-.emotion-26 {
+.emotion-28 {
   margin: 0 0 0 8px;
   max-width: 100%;
   overflow: hidden;
@@ -662,7 +703,7 @@ exports[`renders correctly when open with an image 1`] = `
         0 body
       </div>
       <div
-        className="emotion-14 emotion-15"
+        className=" emotion-14 emotion-15"
       >
         <div>
           main_page.address
@@ -685,14 +726,20 @@ exports[`renders correctly when open with an image 1`] = `
         <div>
           000
         </div>
+        <a
+          className="emotion-16 emotion-17"
+          href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
+        >
+          main_page.get_directions
+        </a>
       </div>
     </div>
     <div
-      className="emotion-4 emotion-5"
+      className="fixed-ltr emotion-4 emotion-5"
     >
       <button
         appearance="subtle-outline"
-        className="emotion-18 emotion-19"
+        className="emotion-20 emotion-21"
         color="primary"
         disabled={false}
         onClick={[Function]}
@@ -700,14 +747,14 @@ exports[`renders correctly when open with an image 1`] = `
         type="button"
       >
         <span
-          className="emotion-20 emotion-21"
+          className="emotion-22 emotion-23"
         >
           <span
-            className="emotion-22 emotion-23"
+            className="emotion-24 emotion-25"
           >
             <svg
               aria-hidden="true"
-              className="emotion-24 emotion-25"
+              className="emotion-26 emotion-27"
               data-icon="arrow-left"
               data-prefix="fas"
               focusable="false"
@@ -723,7 +770,7 @@ exports[`renders correctly when open with an image 1`] = `
             </svg>
           </span>
           <span
-            className="emotion-26 emotion-27"
+            className="emotion-28 emotion-29"
           >
             main_page.location_close
           </span>
@@ -790,6 +837,10 @@ exports[`renders correctly when open with no image 1`] = `
   flex-grow: 0;
 }
 
+.emotion-4.fixed-ltr {
+  direction: ltr;
+}
+
 .emotion-6 {
   font-size: 36px;
   line-height: 48px;
@@ -831,7 +882,40 @@ exports[`renders correctly when open with no image 1`] = `
   width: fit-content;
 }
 
-.emotion-18 {
+.emotion-14.dark-theme {
+  border: white 1px solid;
+}
+
+.emotion-16 {
+  color: #5C11A6;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  background-image: linear-gradient(currentColor, currentColor);
+  -webkit-background-position: 0% 100%;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 0% 0.1em;
+  background-size: 0% 0.1em;
+  -webkit-transition: background-size 150ms ease-in-out;
+  transition: background-size 150ms ease-in-out;
+}
+
+.emotion-16:hover,
+.emotion-16:focus {
+  -webkit-background-size: 100% 0.1em;
+  background-size: 100% 0.1em;
+}
+
+.emotion-16:focus {
+  outline: none;
+}
+
+.emotion-16:visited {
+  color: #276BE5;
+}
+
+.emotion-20 {
   -webkit-text-decoration: none;
   text-decoration: none;
   border-color: transparent;
@@ -871,18 +955,18 @@ exports[`renders correctly when open with no image 1`] = `
   position: relative;
 }
 
-.emotion-18 .svg-inline--fa {
+.emotion-20 .svg-inline--fa {
   width: 16px;
   height: 16px;
 }
 
-.emotion-18::-moz-focus-inner {
+.emotion-20::-moz-focus-inner {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-.emotion-18:before {
+.emotion-20:before {
   content: '';
   display: block;
   position: absolute;
@@ -896,7 +980,7 @@ exports[`renders correctly when open with no image 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-18:after {
+.emotion-20:after {
   content: '';
   display: block;
   position: absolute;
@@ -908,44 +992,44 @@ exports[`renders correctly when open with no image 1`] = `
   transition: all 120ms ease-in-out;
 }
 
-.emotion-18,
-.emotion-18:before {
+.emotion-20,
+.emotion-20:before {
   border-radius: 8px;
 }
 
-.emotion-18:after {
+.emotion-20:after {
   border-radius: 10px;
 }
 
-.emotion-18,
-.emotion-18:focus {
+.emotion-20,
+.emotion-20:focus {
   color: #7935D2;
   border-color: #7935D2;
   background: transparent;
 }
 
-.emotion-18:hover,
-.emotion-18:hover:focus {
+.emotion-20:hover,
+.emotion-20:hover:focus {
   background: rgba(121,53,210,0.1);
 }
 
-.emotion-18:active,
-.emotion-18:active:focus {
+.emotion-20:active,
+.emotion-20:active:focus {
   background: rgba(121,53,210,0.2);
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
 }
 
-.emotion-18,
-.emotion-18:focus {
+.emotion-20,
+.emotion-20:focus {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.11);
 }
 
-.emotion-18:focus::after {
+.emotion-20:focus::after {
   border: 2px solid #5192FC;
 }
 
-.emotion-20 {
+.emotion-22 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -966,7 +1050,7 @@ exports[`renders correctly when open with no image 1`] = `
   justify-content: center;
 }
 
-.emotion-22 {
+.emotion-24 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -996,7 +1080,7 @@ exports[`renders correctly when open with no image 1`] = `
   transition: opacity 0.3s;
 }
 
-.emotion-24 {
+.emotion-26 {
   display: inline-block;
   font-size: inherit;
   overflow: visible;
@@ -1006,7 +1090,7 @@ exports[`renders correctly when open with no image 1`] = `
   font-size: 16px;
 }
 
-.emotion-26 {
+.emotion-28 {
   margin: 0 0 0 8px;
   max-width: 100%;
   overflow: hidden;
@@ -1048,7 +1132,7 @@ exports[`renders correctly when open with no image 1`] = `
         0 body
       </div>
       <div
-        className="emotion-14 emotion-15"
+        className=" emotion-14 emotion-15"
       >
         <div>
           main_page.address
@@ -1071,14 +1155,20 @@ exports[`renders correctly when open with no image 1`] = `
         <div>
           000
         </div>
+        <a
+          className="emotion-16 emotion-17"
+          href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
+        >
+          main_page.get_directions
+        </a>
       </div>
     </div>
     <div
-      className="emotion-4 emotion-5"
+      className="fixed-ltr emotion-4 emotion-5"
     >
       <button
         appearance="subtle-outline"
-        className="emotion-18 emotion-19"
+        className="emotion-20 emotion-21"
         color="primary"
         disabled={false}
         onClick={[Function]}
@@ -1086,14 +1176,14 @@ exports[`renders correctly when open with no image 1`] = `
         type="button"
       >
         <span
-          className="emotion-20 emotion-21"
+          className="emotion-22 emotion-23"
         >
           <span
-            className="emotion-22 emotion-23"
+            className="emotion-24 emotion-25"
           >
             <svg
               aria-hidden="true"
-              className="emotion-24 emotion-25"
+              className="emotion-26 emotion-27"
               data-icon="arrow-left"
               data-prefix="fas"
               focusable="false"
@@ -1109,7 +1199,7 @@ exports[`renders correctly when open with no image 1`] = `
             </svg>
           </span>
           <span
-            className="emotion-26 emotion-27"
+            className="emotion-28 emotion-29"
           >
             main_page.location_close
           </span>
@@ -1185,6 +1275,10 @@ exports[`renders the error when erroring 1`] = `
   -webkit-flex-grow: 0;
   -ms-flex-positive: 0;
   flex-grow: 0;
+}
+
+.emotion-6.fixed-ltr {
+  direction: ltr;
 }
 
 .emotion-8 {
@@ -1387,7 +1481,7 @@ exports[`renders the error when erroring 1`] = `
       main_page.location_error
     </div>
     <div
-      className="emotion-6 emotion-7"
+      className="fixed-ltr emotion-6 emotion-7"
     >
       <button
         appearance="subtle-outline"
@@ -1500,6 +1594,10 @@ exports[`renders the error when there should be a shop but is not 1`] = `
   flex-grow: 0;
 }
 
+.emotion-6.fixed-ltr {
+  direction: ltr;
+}
+
 .emotion-8 {
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1700,7 +1798,7 @@ exports[`renders the error when there should be a shop but is not 1`] = `
       main_page.location_error
     </div>
     <div
-      className="emotion-6 emotion-7"
+      className="fixed-ltr emotion-6 emotion-7"
     >
       <button
         appearance="subtle-outline"

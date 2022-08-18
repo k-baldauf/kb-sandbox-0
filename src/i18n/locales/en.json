@@ -29,10 +29,13 @@
   },
   "main_page": {
     "address": "Address:",
+    "get_directions": "Get Directions",
     "loading": "Loading...",
     "load_more_shops": "Load more results",
     "location_error": "There was an error loading this location!",
     "location_close": "Return to search results",
+    "cuisines_label": "Cuisine filter:",
+    "tags_label": "Tag filter:",
     "search_label": "Find restaurants near:",
     "search_error": "There was an error processing your search!",
     "no_locations_found": "No locations matched your search"

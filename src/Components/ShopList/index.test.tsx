@@ -35,7 +35,9 @@ const shopGenerator: (index: number, hasImage: boolean) => Shop = (
     { locale: 'last', translation: `title ${index}` }
   ],
   _id: `abc${index}`,
-  tags: []
+  cuisines: ['a', 'b'],
+  tags: ['x', 'y'],
+  geocode: { lon: 0, lat: 0 }
 });
 
 const noop = () => {
@@ -63,6 +65,9 @@ test('renders correctly with one shop', () => {
           moreAvailable={false}
           shops={[shopGenerator(0, false)]}
           selectShop={noop}
+          selectedCuisines={[]}
+          selectedTags={[]}
+          toggleFilter={noop}
         />
       </Wrapper>
     )
@@ -83,6 +88,9 @@ test('renders correctly with more shops available', () => {
           moreAvailable
           shops={[]}
           selectShop={noop}
+          selectedCuisines={['b']}
+          selectedTags={['x']}
+          toggleFilter={noop}
         />
       </Wrapper>
     )
@@ -103,6 +111,9 @@ test('renders correctly with several shops', () => {
           moreAvailable
           shops={[4, 2, 1, 3, 5].map((n) => shopGenerator(n, !!(n % 2)))}
           selectShop={noop}
+          selectedCuisines={['a']}
+          selectedTags={['z']}
+          toggleFilter={noop}
         />
       </Wrapper>
     )

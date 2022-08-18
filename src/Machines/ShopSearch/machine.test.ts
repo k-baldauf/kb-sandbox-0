@@ -57,6 +57,18 @@ describe('shopSearchMachine', () => {
     expect(actualState.matches(expectedValue)).toBeTruthy();
   });
 
+  test('should not search when a CHANGEFILTER event occurs with no context', () => {
+    const expectedValue = 'noResults';
+
+    const actualState = shopSearchMachine.transition('noResults', {
+      type: 'CHANGEFILTER',
+      tag: 'a',
+      filter: 'tags'
+    });
+
+    expect(actualState.matches(expectedValue)).toBeTruthy();
+  });
+
   // Service transitions
 
   test('should eventually reach "results" when there are shops', (done) => {
@@ -97,30 +109,32 @@ describe('shopSearchMachine', () => {
     shopSearchService.send({ type: 'SEARCH', language: 'x', lat: 0, lon: 0 });
   });
 
-  test('should increment the page until it reaches all the shops', (done) => {
+  test('can change a filter to reset and rerun the search', (done) => {
     (getData as jest.Mock).mockReturnValue({
       shops: ['a', 'b'],
       meta: { record_count: 101 }
     });
 
+    let hasReachedResultsOnce = false;
+
     const shopSearchService = xstate
       .interpret(shopSearchMachine)
       .onTransition((state) => {
-        if (state.matches('results')) {
-          if (!state.context.moreAvailable) {
-            expect(state.context.results).toEqual([
-              'a',
-              'b',
-              'a',
-              'b',
-              'a',
-              'b'
-            ]);
-            expect(state.context.page).toBe(3);
-            done();
-          } else {
-            shopSearchService.send({ type: 'MORE' });
-          }
+        if (state.matches('results') && !hasReachedResultsOnce) {
+          hasReachedResultsOnce = true;
+          expect(state.context.results).toEqual(['a', 'b']);
+          expect(state.context.page).toBe(1);
+          expect(state.context.tags).toEqual([]);
+          shopSearchService.send({
+            type: 'CHANGEFILTER',
+            tag: 'x',
+            filter: 'tags'
+          });
+        } else if (state.matches('searching') && hasReachedResultsOnce) {
+          expect(state.context.results).toEqual([]);
+          expect(state.context.page).toBe(0);
+          expect(state.context.tags).toEqual(['x']);
+          done();
         }
       });
 

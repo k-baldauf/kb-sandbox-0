@@ -11,6 +11,9 @@ export const PanelWrapper = styled('div')`
 export const FixedContent = styled('div')`
   flex-shrink: 0;
   flex-grow: 0;
+  &.fixed-ltr {
+    direction: ltr;
+  }
 `;
 
 export const ScrollableContent = styled('div')`
@@ -28,6 +31,9 @@ export const ShopDescription = styled('div')``;
 export const ShopAddress = styled('div')`
   margin: ${Spacing.L2} 0;
   border: black 1px solid;
+  &.dark-theme {
+    border: white 1px solid;
+  }
   padding: ${Spacing.L2};
   width: fit-content;
 `;
