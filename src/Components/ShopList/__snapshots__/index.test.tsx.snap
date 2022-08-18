@@ -1,0 +1,687 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with more shops available 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: translate3d(-100vh, 0, 0);
+    -moz-transform: translate3d(-100vh, 0, 0);
+    -ms-transform: translate3d(-100vh, 0, 0);
+    transform: translate3d(-100vh, 0, 0);
+  }
+}
+
+.emotion-0 {
+  -webkit-animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.emotion-2 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 0 24px;
+  vertical-align: middle;
+  min-width: 120px;
+  font-weight: 600;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+  position: relative;
+}
+
+.emotion-2 .svg-inline--fa {
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-2::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-2:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: transparent;
+  opacity: 0;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+}
+
+.emotion-2:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+}
+
+.emotion-2,
+.emotion-2:before {
+  border-radius: 8px;
+}
+
+.emotion-2:after {
+  border-radius: 10px;
+}
+
+.emotion-2,
+.emotion-2:focus {
+  color: #7935D2;
+  border-color: #7935D2;
+  background: transparent;
+}
+
+.emotion-2:hover,
+.emotion-2:hover:focus {
+  background: rgba(121,53,210,0.1);
+}
+
+.emotion-2:active,
+.emotion-2:active:focus {
+  background: rgba(121,53,210,0.2);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.emotion-2,
+.emotion-2:focus {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.11);
+}
+
+.emotion-2:focus::after {
+  border: 2px solid #5192FC;
+}
+
+.emotion-4 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-6 {
+  margin: 0 8px 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.emotion-8 {
+  font-weight: 600;
+}
+
+.emotion-10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.emotion-12 {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.175em;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  <button
+    appearance="subtle-outline"
+    className="emotion-2 emotion-3"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+    size="regular"
+    type="button"
+  >
+    <span
+      className="emotion-4 emotion-5"
+    >
+      <span
+        className="emotion-6 emotion-7"
+      >
+        <div
+          className="emotion-8 emotion-9"
+        />
+      </span>
+      <span
+        className="emotion-10 emotion-11"
+      >
+        <svg
+          aria-hidden="true"
+          className="emotion-12 emotion-13"
+          data-icon="arrow-down"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders correctly with one shop 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: translate3d(-100vh, 0, 0);
+    -moz-transform: translate3d(-100vh, 0, 0);
+    -ms-transform: translate3d(-100vh, 0, 0);
+    transform: translate3d(-100vh, 0, 0);
+  }
+}
+
+.emotion-0 {
+  -webkit-animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.emotion-2 {
+  margin: 4px;
+  color: inherit;
+  border: #7935D2 1px solid;
+  border-radius: 8;
+  padding: 12px;
+  height: calc(100% - 2*4px);
+}
+
+.emotion-2:hover {
+  cursor: pointer;
+}
+
+.emotion-4 {
+  font-weight: 600;
+}
+
+.emotion-6 {
+  height: 100%;
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      className="emotion-4 emotion-5"
+    >
+      0 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+</div>
+`;
+
+exports[`renders correctly with several shops 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: translate3d(-100vh, 0, 0);
+    -moz-transform: translate3d(-100vh, 0, 0);
+    -ms-transform: translate3d(-100vh, 0, 0);
+    transform: translate3d(-100vh, 0, 0);
+  }
+}
+
+.emotion-0 {
+  -webkit-animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  animation: animation-0 cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.emotion-2 {
+  margin: 4px;
+  color: inherit;
+  border: #7935D2 1px solid;
+  border-radius: 8;
+  padding: 12px;
+  height: calc(100% - 2*4px);
+}
+
+.emotion-2:hover {
+  cursor: pointer;
+}
+
+.emotion-4 {
+  font-weight: 600;
+}
+
+.emotion-6 {
+  height: 100%;
+}
+
+.emotion-32 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
+  outline: none;
+  pointer-events: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 0 24px;
+  vertical-align: middle;
+  min-width: 120px;
+  font-weight: 600;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+  position: relative;
+}
+
+.emotion-32 .svg-inline--fa {
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-32::-moz-focus-inner {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.emotion-32:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: transparent;
+  opacity: 0;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+}
+
+.emotion-32:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  -webkit-transition: all 120ms ease-in-out;
+  transition: all 120ms ease-in-out;
+}
+
+.emotion-32,
+.emotion-32:before {
+  border-radius: 8px;
+}
+
+.emotion-32:after {
+  border-radius: 10px;
+}
+
+.emotion-32,
+.emotion-32:focus {
+  color: #7935D2;
+  border-color: #7935D2;
+  background: transparent;
+}
+
+.emotion-32:hover,
+.emotion-32:hover:focus {
+  background: rgba(121,53,210,0.1);
+}
+
+.emotion-32:active,
+.emotion-32:active:focus {
+  background: rgba(121,53,210,0.2);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.emotion-32,
+.emotion-32:focus {
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.11);
+}
+
+.emotion-32:focus::after {
+  border: 2px solid #5192FC;
+}
+
+.emotion-34 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-36 {
+  margin: 0 8px 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.emotion-40 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.emotion-42 {
+  display: inline-block;
+  font-size: inherit;
+  overflow: visible;
+  vertical-align: -0.175em;
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      className="emotion-4 emotion-5"
+    >
+      4 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      className="emotion-4 emotion-5"
+    >
+      2 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "background": "url('1.jpg') center",
+          "backgroundSize": "cover",
+          "height": "100px",
+        }
+      }
+    />
+    <div
+      className="emotion-4 emotion-5"
+    >
+      1 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "background": "url('3.jpg') center",
+          "backgroundSize": "cover",
+          "height": "100px",
+        }
+      }
+    />
+    <div
+      className="emotion-4 emotion-5"
+    >
+      3 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+  <button
+    className="emotion-2 emotion-3"
+    onClick={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "background": "url('5.jpg') center",
+          "backgroundSize": "cover",
+          "height": "100px",
+        }
+      }
+    />
+    <div
+      className="emotion-4 emotion-5"
+    >
+      5 name
+    </div>
+    <div
+      className="emotion-6 emotion-7"
+    />
+  </button>
+  <button
+    appearance="subtle-outline"
+    className="emotion-32 emotion-33"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+    size="regular"
+    type="button"
+  >
+    <span
+      className="emotion-34 emotion-35"
+    >
+      <span
+        className="emotion-36 emotion-37"
+      >
+        <div
+          className="emotion-4 emotion-5"
+        />
+      </span>
+      <span
+        className="emotion-40 emotion-41"
+      >
+        <svg
+          aria-hidden="true"
+          className="emotion-42 emotion-43"
+          data-icon="arrow-down"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w2.org/2000/svg"
+        >
+          <path
+            d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+      </span>
+    </span>
+  </button>
+</div>
+`;

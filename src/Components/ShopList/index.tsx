@@ -7,7 +7,13 @@ import { getBestTranslation } from '../../utils';
 import { PREVIEW_IMAGE_HEIGHT } from '../../utils/constants';
 import { Shop } from '../../utils/types';
 
-import { ShopListWrapper, ShopItem, ShopName } from './styles';
+import {
+  ShopListWrapper,
+  ShopItem,
+  ShopName,
+  ShopTag,
+  TagContainer
+} from './styles';
 
 interface ShopListProps {
   loadMoreShops: () => void;
@@ -41,6 +47,11 @@ export function ShopList({
             {getBestTranslation(shop.name_translations, language)
               ?.translation || ''}
           </ShopName>
+          <TagContainer>
+            {shop.tags.map((tag) => (
+              <ShopTag key={tag}>{tag}</ShopTag>
+            ))}
+          </TagContainer>
         </ShopItem>
       ))}
       {moreAvailable && (

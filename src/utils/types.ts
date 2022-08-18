@@ -36,6 +36,7 @@ export type Shop = {
   name: string[];
   content_body_translations: Translation[];
   content_title_translations: Translation[];
+  tags: string[];
   _id: string;
 };
 

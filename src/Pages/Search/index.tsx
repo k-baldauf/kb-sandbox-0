@@ -14,13 +14,14 @@ import { shopSlideoutMachine } from 'Machines/ShopSlideout/machine';
 import { SearchWrapper, ErrorMessage } from './styles';
 
 export function Search(): JSX.Element {
+  const [autocompleteState, autocompleteSend] = useMachine(autocompleteMachine);
+  const [shopSearchState, shopSearchSend] = useMachine(shopSearchMachine);
+  const [shopSlideoutState, shopSlideoutSend] = useMachine(shopSlideoutMachine);
+
   const { location = '' } = useParams();
   const [t, { language }] = useTranslation();
   const [search, setSearch] = React.useState(location);
   const [placeholder, setPlaceholder] = React.useState('');
-  const [autocompleteState, autocompleteSend] = useMachine(autocompleteMachine);
-  const [shopSearchState, shopSearchSend] = useMachine(shopSearchMachine);
-  const [shopSlideoutState, shopSlideoutSend] = useMachine(shopSlideoutMachine);
 
   React.useEffect(() => {
     autocompleteSend('SEARCH', { language, search });

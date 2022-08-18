@@ -26,5 +26,15 @@
     "your_email": "あなたのメール",
     "message": "メッセージ",
     "app_name": "SPA Boilerplate"
+  },
+  "main_page": {
+    "address": "所番地:",
+    "loading": "ローディング中...",
+    "load_more_shops": "もっと見せて",
+    "location_error": "ロードのエラー",
+    "location_close": "検索結果に戻る",
+    "search_label": "このあたりにレストランを探す:",
+    "search_error": "捜しのエラー",
+    "no_locations_found": "検索結果ありません"
   }
 }

@@ -1,8 +1,12 @@
-# TableCheck's SPA Boilerplate
+# Restaurant Search via TableCheck's SPA Boilerplate
 
 DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
 
 ## Features
+
+- Search for a location
+- View nearby restaurants, including loading more after scrolling to the bottom
+- View details about a restaurant
 
 - Main tech stack: React, TypeScript, Emotion, i18n
 - Tablekit integration with FontAwesome icons and Dark Mode
@@ -19,6 +23,32 @@ DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
 - Run `nvm use` or `nvm use <version>` (on machines running Windows)
 - Run `npm i --legacy-peer-deps` (will install the dependencies)
 - Run `npm start` (will start the app in http://localhost:3000/)
+
+## Digging into the code
+
+### Machines
+
+Most of the state management is handled by [xState](https://xstate.js.org). Any asynchronous operations should be handled within the context of a state machine. All machines are built assuming they will receive well-typed but not necessarily otherwise valid events. Machines should be thoroughly tested, as they are responsible for workflow logic that might be easy to miss corner cases for.
+
+### Components
+
+Components that are responsible for only display logic are located in the Components directory. They can be mostly tested using snapshots.
+
+### Pages
+
+Pages have more complex functionality including state management.
+
+## Running tests
+
+Tests can be run via `npm test`. This includes unit tests and snapshot tests.
+
+## Future work
+
+- Currently the app doesn't unrender previously-loaded restaurants. This could get expensive memory-wise after enough additional loads. In the ideal case, we would start to remove from both the DOM and the app's memory as we load in more restaurants.
+- As a related nice-to-have, a "Return to top" button or otherwise easy way to access the search after scrolling for a while.
+- Addresses always seemed to be in Japanese without any localization; lacking cues, I made no attempt to have the app switch smartly.
+- I only added localization for English and (basic) Japanese for the new text fields I added; other supported languages should be filled out as well (and the Japanese should be fixed by someone with more fluency than me).
+- The app could use TLC from a designer overall; in particular the panel is rather bland.
 
 ## Deploy to production
 
