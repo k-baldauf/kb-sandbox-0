@@ -6,7 +6,7 @@ import { eventError, extractArgs } from '../../utils/machines';
 import { ExtendedShop } from '../../utils/types';
 
 import {
-  EventTypes,
+  EventType,
   DataContext,
   DataEvent,
   ResponsePayload,
@@ -53,8 +53,8 @@ const machineActions = {
   }),
   setShop: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_GET)
-      throw new Error(eventError(event, EventTypes.SHOP_GET));
+    if (event.type !== EventType.ShopGet)
+      throw new Error(eventError(event, EventType.ShopGet));
     return {
       shop: event.data.response[0]
     };
@@ -64,8 +64,8 @@ const machineActions = {
 const machineGuards = {
   hasOneShop: (...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_GET)
-      throw new Error(eventError(event, EventTypes.SHOP_GET));
+    if (event.type !== EventType.ShopGet)
+      throw new Error(eventError(event, EventType.ShopGet));
     return event.data.response.length === 1;
   },
   hasSearchParams: (...args: DataArgs) => {

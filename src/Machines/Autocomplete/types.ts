@@ -1,8 +1,8 @@
 import { AutocompleteResponse } from '../../utils/types';
 
-export const EventTypes = {
-  AUTOCOMPLETE_SEARCH: 'done.invoke.autocomplete-search-service' as const
-};
+export enum EventType {
+  AutocompleteSearch = 'done.invoke.autocomplete-search-service'
+}
 
 type ClearEvent = {
   type: 'CLEAR';
@@ -16,7 +16,7 @@ type SearchEvent = {
 
 export type ResponsePayload = { response: AutocompleteResponse };
 type ResponseEvent = {
-  type: typeof EventTypes.AUTOCOMPLETE_SEARCH;
+  type: EventType.AutocompleteSearch;
   data: ResponsePayload;
 };
 

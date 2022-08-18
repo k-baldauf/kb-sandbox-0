@@ -69,7 +69,8 @@ export function Search(): JSX.Element {
       {autocompleteState.value === 'noResults' && (
         <>{t('main_page.no_locations_found')}</>
       )}
-      {autocompleteState.value === 'error' && (
+      {(autocompleteState.value === 'error' ||
+        shopSearchState.value === 'error') && (
         <ErrorMessage>{t('main_page.search_error')}</ErrorMessage>
       )}
       {(shopSearchState.value === 'searching' ||

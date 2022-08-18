@@ -1,8 +1,8 @@
 import { Shop } from '../../utils/types';
 
-export const EventTypes = {
-  SHOP_SEARCH: 'done.invoke.shop-search-service' as const
-};
+export enum EventType {
+  ShopSearch = 'done.invoke.shop-search-service'
+}
 
 type GenericEvent = {
   type: 'MORE';
@@ -21,7 +21,7 @@ export type ResponsePayload = {
   moreAvailable: boolean;
 };
 type ResponseEvent = {
-  type: typeof EventTypes.SHOP_SEARCH;
+  type: EventType.ShopSearch;
   data: ResponsePayload;
 };
 

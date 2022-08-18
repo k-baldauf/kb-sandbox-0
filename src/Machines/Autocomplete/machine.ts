@@ -6,7 +6,7 @@ import { eventError, extractArgs } from '../../utils/machines';
 import { AutocompleteResponse } from '../../utils/types';
 
 import {
-  EventTypes,
+  EventType,
   DataContext,
   DataEvent,
   ResponsePayload,
@@ -53,8 +53,8 @@ const machineActions = {
   }),
   setResults: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.AUTOCOMPLETE_SEARCH)
-      throw new Error(eventError(event, EventTypes.AUTOCOMPLETE_SEARCH));
+    if (event.type !== EventType.AutocompleteSearch)
+      throw new Error(eventError(event, EventType.AutocompleteSearch));
     return {
       results: event.data.response
     };
@@ -64,8 +64,8 @@ const machineActions = {
 const machineGuards = {
   hasResults: (...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.AUTOCOMPLETE_SEARCH)
-      throw new Error(eventError(event, EventTypes.AUTOCOMPLETE_SEARCH));
+    if (event.type !== EventType.AutocompleteSearch)
+      throw new Error(eventError(event, EventType.AutocompleteSearch));
     return !!event.data.response.locations?.length;
   },
   hasSearchParams: (...args: DataArgs) => {

@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
-import { FontWeight, Spacing } from '@tablecheck/tablekit-theme';
+import {
+  BORDER_RADIUS,
+  COLORS,
+  FontWeight,
+  Spacing
+} from '@tablecheck/tablekit-theme';
 
 import { pageTransitionEasing, slideRight } from '../../styles';
 
@@ -11,11 +16,14 @@ export const ShopListWrapper = styled('div')`
 `;
 
 export const ShopItem = styled('button')`
-  margin: ${Spacing.L3};
+  margin: ${Spacing.L1};
   color: inherit;
   &:hover {
     cursor: pointer;
   }
+  border: ${COLORS.PURPLE.L5} 1px solid;
+  border-radius: ${BORDER_RADIUS};
+  padding: ${Spacing.L3};
 `;
 
 export const ShopName = styled('div')`

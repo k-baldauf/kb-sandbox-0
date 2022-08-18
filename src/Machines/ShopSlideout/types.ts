@@ -1,8 +1,8 @@
 import { ExtendedShop } from '../../utils/types';
 
-export const EventTypes = {
-  SHOP_GET: 'done.invoke.shop-slideout-get-service' as const
-};
+export enum EventType {
+  ShopGet = 'done.invoke.shop-slideout-get-service'
+}
 
 type CloseEvent = {
   type: 'CLOSE';
@@ -16,7 +16,7 @@ type OpenEvent = {
 
 export type ResponsePayload = { response: ExtendedShop[] };
 type ResponseEvent = {
-  type: typeof EventTypes.SHOP_GET;
+  type: EventType.ShopGet;
   data: ResponsePayload;
 };
 

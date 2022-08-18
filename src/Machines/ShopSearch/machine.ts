@@ -6,7 +6,7 @@ import { eventError, extractArgs } from '../../utils/machines';
 import { Shop } from '../../utils/types';
 
 import {
-  EventTypes,
+  EventType,
   DataContext,
   DataEvent,
   ResponsePayload,
@@ -71,16 +71,16 @@ const machineActions = {
   }),
   setMoreAvailable: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_SEARCH)
-      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    if (event.type !== EventType.ShopSearch)
+      throw new Error(eventError(event, EventType.ShopSearch));
     return {
       moreAvailable: event.data.moreAvailable
     };
   }),
   setPage: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_SEARCH)
-      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    if (event.type !== EventType.ShopSearch)
+      throw new Error(eventError(event, EventType.ShopSearch));
     return {
       page: event.data.page
     };
@@ -96,8 +96,8 @@ const machineActions = {
   }),
   setResults: assign((...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_SEARCH)
-      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    if (event.type !== EventType.ShopSearch)
+      throw new Error(eventError(event, EventType.ShopSearch));
     return {
       results: event.data.response
     };
@@ -111,8 +111,8 @@ const machineGuards = {
   },
   hasResults: (...args: DataArgs) => {
     const { event } = extractArgs(args);
-    if (event.type !== EventTypes.SHOP_SEARCH)
-      throw new Error(eventError(event, EventTypes.SHOP_SEARCH));
+    if (event.type !== EventType.ShopSearch)
+      throw new Error(eventError(event, EventType.ShopSearch));
     return !!event.data.response.length;
   },
   hasSearchParams: (...args: DataArgs) => {

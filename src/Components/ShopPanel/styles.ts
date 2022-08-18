@@ -3,6 +3,20 @@ import { Spacing } from '@tablecheck/tablekit-theme';
 
 export const PanelWrapper = styled('div')`
   padding: ${Spacing.L3};
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+export const FixedContent = styled('div')`
+  flex-shrink: 0;
+  flex-grow: 0;
+`;
+
+export const ScrollableContent = styled('div')`
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow-y: scroll;
 `;
 
 export const ShopTitle = styled('h2')`

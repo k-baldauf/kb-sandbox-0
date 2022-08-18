@@ -13,7 +13,9 @@ import {
   PanelWrapper,
   ShopTitle,
   ShopDescription,
-  ShopAddress
+  ShopAddress,
+  ScrollableContent,
+  FixedContent
 } from './styles';
 
 interface ShopPanelProps {
@@ -34,55 +36,68 @@ export function ShopPanel({
   const [t, { language }] = useTranslation();
 
   return (
-    <Panel isOpen={isOpen} onClickOutside={onClose} width="90%">
+    <Panel
+      isOpen={isOpen}
+      onClickOutside={onClose}
+      width="90%"
+      shouldDisableBodyScroll
+    >
       <PanelWrapper>
         {!isError && !isLoading && shop && (
           <>
-            {shop.search_image && (
-              <div
-                style={{
-                  background: `url('${shop.search_image}') center`,
-                  backgroundSize: `cover`,
-                  height: PREVIEW_IMAGE_HEIGHT,
-                  width: '100%'
-                }}
-              />
-            )}
-            <Headline>
-              {getBestTranslation(shop.name_translations, language)
-                ?.translation || ''}
-            </Headline>
-            <ShopTitle>
-              {getBestTranslation(shop.content_title_translations, language)
-                ?.translation || ''}
-            </ShopTitle>
-            <ShopDescription>
-              {getBestTranslation(shop.content_body_translations, language)
-                ?.translation || ''}
-            </ShopDescription>
-            <ShopAddress>
-              <div>{t('main_page.address')}</div>
-              <div>{shop.address.street}</div>
-              <div>{shop.address.street2}</div>
-              <div>{shop.address.city}</div>
-              <div>{shop.address.region}</div>
-              <div>{shop.address.country}</div>
-              <div>{shop.address.postal_code}</div>
-            </ShopAddress>
+            <FixedContent>
+              {shop.search_image && (
+                <div
+                  style={{
+                    background: `url('${shop.search_image}') center`,
+                    backgroundSize: `cover`,
+                    height: PREVIEW_IMAGE_HEIGHT,
+                    width: '100%'
+                  }}
+                />
+              )}
+              <Headline>
+                {getBestTranslation(shop.name_translations, language)
+                  ?.translation || ''}
+              </Headline>
+            </FixedContent>
+            <ScrollableContent>
+              <ShopTitle>
+                {getBestTranslation(shop.content_title_translations, language)
+                  ?.translation || ''}
+              </ShopTitle>
+              <ShopDescription>
+                {getBestTranslation(shop.content_body_translations, language)
+                  ?.translation || ''}
+              </ShopDescription>
+              <ShopAddress>
+                <div>{t('main_page.address')}</div>
+                <div>{shop.address.street}</div>
+                <div>{shop.address.street2}</div>
+                <div>{shop.address.city}</div>
+                <div>{shop.address.region}</div>
+                <div>{shop.address.country}</div>
+                <div>{shop.address.postal_code}</div>
+              </ShopAddress>
+            </ScrollableContent>
           </>
         )}
         {(isError || (!isLoading && !shop)) && (
-          <>{t('main_page.location_error')}</>
+          <ScrollableContent>{t('main_page.location_error')}</ScrollableContent>
         )}
-        {isLoading && <>{t('main_page.loading')}</>}
-        <Button
-          appearance={Appearance.SubtleOutline}
-          iconBefore={<Icon icon={faArrowLeft} />}
-          onClick={onClose}
-          shouldFitContainer
-        >
-          {t('main_page.location_close')}
-        </Button>
+        {isLoading && (
+          <ScrollableContent>{t('main_page.loading')}</ScrollableContent>
+        )}
+        <FixedContent>
+          <Button
+            appearance={Appearance.SubtleOutline}
+            iconBefore={<Icon icon={faArrowLeft} />}
+            onClick={onClose}
+            shouldFitContainer
+          >
+            {t('main_page.location_close')}
+          </Button>
+        </FixedContent>
       </PanelWrapper>
     </Panel>
   );
