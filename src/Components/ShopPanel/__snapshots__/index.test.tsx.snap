@@ -729,7 +729,7 @@ exports[`renders correctly when open with an image 1`] = `
         </div>
         <a
           className="emotion-16 emotion-17"
-          href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
+          href="https://www.google.com/maps/dir/?api=1&destination=0,0"
         >
           search.actions.get_directions
         </a>
@@ -1158,7 +1158,7 @@ exports[`renders correctly when open with no image 1`] = `
         </div>
         <a
           className="emotion-16 emotion-17"
-          href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
+          href="https://www.google.com/maps/dir/?api=1&destination=0,0"
         >
           search.actions.get_directions
         </a>

@@ -108,10 +108,6 @@ export function Search(): JSX.Element {
           shopSlideoutSend('CLOSE');
         }}
         shop={shopSlideoutState.context.shop}
-        fromLocation={[
-          shopSearchState.context.lat,
-          shopSearchState.context.lon
-        ]}
       />
     </SearchWrapper>
   );

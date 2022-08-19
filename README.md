@@ -5,19 +5,19 @@ DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
 ## Features
 
 - Search for a location
+- Auto-populate a search by appending `/(search_query)` to the app URL (with language), for instance `app.com/en/tokyo`
 - View nearby restaurants, including loading more after scrolling to the bottom
-- I intentionally allowed the user to see the suggested locations while the list of restaurants remains on the screen
+- List of restaurants remains on the screen while user searches for new locations
 - View details about a restaurant
 - Get directions to a restaurant (via Google Maps)
 - Filter searches by tag or by cuisine type
-
 - Main tech stack: React, TypeScript, Emotion, i18n, xState
 - Tablekit integration with FontAwesome icons and Dark Mode
 - Basic localized routing
 - Basic layout with footer, top and side navs
 - Language Selection
 - Responsive
-- High scores in Google Lighthouse Audit
+- High scores in Google Lighthouse Audit (though mobile loading could be improved)
 - Basic FormSpree contact form
 
 ## Getting started

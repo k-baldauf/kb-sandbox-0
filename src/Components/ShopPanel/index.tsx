@@ -21,7 +21,6 @@ import {
 } from './styles';
 
 interface ShopPanelProps {
-  fromLocation: [lat: number | undefined, lon: number | undefined];
   isError: boolean;
   isLoading: boolean;
   isOpen: boolean;
@@ -30,7 +29,6 @@ interface ShopPanelProps {
 }
 
 export function ShopPanel({
-  fromLocation,
   isError,
   isLoading,
   isOpen,
@@ -40,11 +38,9 @@ export function ShopPanel({
   const [t, { language }] = useTranslation();
   const { isDark } = useTheme();
 
-  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&${
-    typeof fromLocation[0] === 'number' && typeof fromLocation[1] === 'number'
-      ? `origin=${fromLocation.join(',')}&`
-      : ''
-  }destination=${shop?.geocode.lat},${shop?.geocode.lon}`;
+  const googleMapsUrl =
+    `https://www.google.com/maps/dir/?api=1` +
+    `&destination=${shop?.geocode.lat},${shop?.geocode.lon}`;
 
   return (
     <Panel
