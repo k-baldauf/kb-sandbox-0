@@ -1,5 +1,6 @@
 {
   "actions": {
+    "loading": "Loading...",
     "submit": "Submit",
     "toggle_theme": "Appearance",
     "sending": "Sending ..."
@@ -19,6 +20,10 @@
       "report_issue": "If you see any wrong content or something that could be improved in the app, please report it using the form below. Thank you very much!"
     }
   },
+  "buttons": {
+    "dark_mode": "Toggle dark mode",
+    "main_menu": "Main menu"
+  },
   "keywords": {
     "thank_you": "Thank you! We'll review your submission",
     "anonymous": "Anonymous",
@@ -27,17 +32,23 @@
     "message": "Message",
     "app_name": "SPA Boilerplate"
   },
-  "main_page": {
-    "address": "Address:",
-    "get_directions": "Get Directions",
-    "loading": "Loading...",
-    "load_more_shops": "Load more results",
-    "location_error": "There was an error loading this location!",
-    "location_close": "Return to search results",
-    "cuisines_label": "Cuisine filter:",
-    "tags_label": "Tag filter:",
-    "search_label": "Find restaurants near:",
-    "search_error": "There was an error processing your search!",
-    "no_locations_found": "No locations matched your search"
+  "search": {
+    "actions": {
+      "get_directions": "Get Directions",
+      "load_more_shops": "Load more results",
+      "toggle_filter": "Toggle filter"
+    },
+    "labels": {
+      "address": "Address:",
+      "cuisines_label": "Cuisine filter:",
+      "tags_label": "Tag filter:",
+      "search_label": "Find restaurants near:"
+    },
+    "results": {
+      "location_error": "There was an error loading this location!",
+      "location_close": "Return to search results",
+      "search_error": "There was an error processing your search!",
+      "no_locations_found": "No locations matched your search"
+    }
   }
 }

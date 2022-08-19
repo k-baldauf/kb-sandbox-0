@@ -1,5 +1,6 @@
 {
   "actions": {
+    "loading": "ローディング中...",
     "submit": "送信する",
     "toggle_theme": "外観",
     "sending": "送信..."
@@ -19,6 +20,10 @@
       "report_issue": "サイトで間違ったコンテンツや改善される可能性のあるものを見つけた場合は、以下のフォームを使用して報告してください。 どうもありがとうございました！"
     }
   },
+  "buttons": {
+    "dark_mode": "Dark modeをトグルする",
+    "main_menu": "メインメニュー"
+  },
   "keywords": {
     "thank_you": "ありがとうございました！提出物を確認します",
     "anonymous": "匿名",
@@ -27,17 +32,23 @@
     "message": "メッセージ",
     "app_name": "SPA Boilerplate"
   },
-  "main_page": {
-    "address": "所番地:",
-    "get_directions": "場所への道順",
-    "loading": "ローディング中...",
-    "load_more_shops": "もっと見せて",
-    "location_error": "ロードのエラー",
-    "location_close": "検索結果に戻る",
-    "cuisines_label": "料理のフィルター:",
-    "tags_label": "タグのフィルター:",
-    "search_label": "この辺りにレストランを探す:",
-    "search_error": "捜しのエラー",
-    "no_locations_found": "検索結果ありません"
+  "search": {
+    "actions": {
+      "get_directions": "場所への道順",
+      "load_more_shops": "もっと見せて",
+      "toggle_filter": "フィルターをトグルする"
+    },
+    "labels": {
+      "address": "所番地:",
+      "cuisines_label": "料理のフィルター:",
+      "tags_label": "タグのフィルター:",
+      "search_label": "この辺りにレストランを探す:"
+    },
+    "results": {
+      "location_error": "ロードのエラー",
+      "location_close": "検索結果に戻る",
+      "search_error": "捜しのエラー",
+      "no_locations_found": "検索結果ありません"
+    }
   }
 }

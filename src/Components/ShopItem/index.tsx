@@ -52,6 +52,10 @@ export function ShopItem({
             backgroundSize: `cover`,
             height: PREVIEW_IMAGE_HEIGHT
           }}
+          aria-label={
+            getBestTranslation(shop.name_translations, language)?.translation ||
+            ''
+          }
         />
       )}
       <ShopName>

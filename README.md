@@ -17,6 +17,7 @@ DEMO: [tc-spa-boilerplate.netlify.app](https://tc-spa-boilerplate.netlify.app)
 - Basic layout with footer, top and side navs
 - Language Selection
 - Responsive
+- High scores in Google Lighthouse Audit
 - Basic FormSpree contact form
 
 ## Getting started
@@ -52,7 +53,7 @@ Tests can be run via `npm test`. This includes unit tests and snapshot tests.
 - As a related nice-to-have, a "Return to top" button or otherwise easy way to access the search after scrolling for a while.
 - I couldn't figure out how to construct the URL parameters for searching multiple tags, so right now the app only allows one at a time by design.
 - Addresses always seemed to be in Japanese without any localization; lacking cues, I made no attempt to have the app switch smartly.
-- I only added localization for English and (basic) Japanese for the new text fields I added; other supported languages should be filled out as well (and the Japanese should be fixed by someone with more fluency than me).
+- I only added translations for English and (basic) Japanese for the new text fields I added; other supported languages should be filled out as well (and the Japanese should be fixed by someone with more fluency than me).
 - The app could use TLC from a designer overall; in particular the panel is rather bland and the loading states are very basic.
 - Add a script to update jest snapshots
 - Add functional tests

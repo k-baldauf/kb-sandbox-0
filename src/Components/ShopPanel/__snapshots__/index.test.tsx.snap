@@ -293,7 +293,7 @@ exports[`renders correctly when loading 1`] = `
     <div
       className="emotion-4 emotion-5"
     >
-      main_page.loading
+      actions.loading
     </div>
     <div
       className="fixed-ltr emotion-6 emotion-7"
@@ -333,7 +333,7 @@ exports[`renders correctly when loading 1`] = `
           <span
             className="emotion-16 emotion-17"
           >
-            main_page.location_close
+            search.results.location_close
           </span>
         </span>
       </button>
@@ -674,6 +674,7 @@ exports[`renders correctly when open with an image 1`] = `
       className="emotion-4 emotion-5"
     >
       <div
+        aria-label="0 name"
         style={
           Object {
             "background": "url('0.jpg') center",
@@ -706,7 +707,7 @@ exports[`renders correctly when open with an image 1`] = `
         className=" emotion-14 emotion-15"
       >
         <div>
-          main_page.address
+          search.labels.address
         </div>
         <div>
           0 street
@@ -730,7 +731,7 @@ exports[`renders correctly when open with an image 1`] = `
           className="emotion-16 emotion-17"
           href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
         >
-          main_page.get_directions
+          search.actions.get_directions
         </a>
       </div>
     </div>
@@ -772,7 +773,7 @@ exports[`renders correctly when open with an image 1`] = `
           <span
             className="emotion-28 emotion-29"
           >
-            main_page.location_close
+            search.results.location_close
           </span>
         </span>
       </button>
@@ -1135,7 +1136,7 @@ exports[`renders correctly when open with no image 1`] = `
         className=" emotion-14 emotion-15"
       >
         <div>
-          main_page.address
+          search.labels.address
         </div>
         <div>
           0 street
@@ -1159,7 +1160,7 @@ exports[`renders correctly when open with no image 1`] = `
           className="emotion-16 emotion-17"
           href="https://www.google.com/maps/dir/?api=1&origin=0,0&destination=0,0"
         >
-          main_page.get_directions
+          search.actions.get_directions
         </a>
       </div>
     </div>
@@ -1201,7 +1202,7 @@ exports[`renders correctly when open with no image 1`] = `
           <span
             className="emotion-28 emotion-29"
           >
-            main_page.location_close
+            search.results.location_close
           </span>
         </span>
       </button>
@@ -1478,7 +1479,7 @@ exports[`renders the error when erroring 1`] = `
     <div
       className="emotion-4 emotion-5"
     >
-      main_page.location_error
+      search.results.location_error
     </div>
     <div
       className="fixed-ltr emotion-6 emotion-7"
@@ -1518,7 +1519,7 @@ exports[`renders the error when erroring 1`] = `
           <span
             className="emotion-16 emotion-17"
           >
-            main_page.location_close
+            search.results.location_close
           </span>
         </span>
       </button>
@@ -1795,7 +1796,7 @@ exports[`renders the error when there should be a shop but is not 1`] = `
     <div
       className="emotion-4 emotion-5"
     >
-      main_page.location_error
+      search.results.location_error
     </div>
     <div
       className="fixed-ltr emotion-6 emotion-7"
@@ -1835,7 +1836,7 @@ exports[`renders the error when there should be a shop but is not 1`] = `
           <span
             className="emotion-16 emotion-17"
           >
-            main_page.location_close
+            search.results.location_close
           </span>
         </span>
       </button>

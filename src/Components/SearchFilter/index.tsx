@@ -1,4 +1,5 @@
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons/faTimesCircle';
+import { useTranslation } from 'react-i18next';
 
 import { FilterContainer, FilterTag, ClickableIcon } from './styles';
 
@@ -13,6 +14,8 @@ export function SearchFilter({
   selectedFilters,
   toggleFilter
 }: SearchFilterProps): JSX.Element {
+  const [t] = useTranslation();
+
   return (
     <>
       {!!selectedFilters.length && (
@@ -22,6 +25,7 @@ export function SearchFilter({
             <FilterTag key={filter}>
               {filter}{' '}
               <ClickableIcon
+                aria-label={`${t('search.actions.toggle_filter')} ${filter}`}
                 icon={faTimesCircle}
                 onClick={() => toggleFilter(filter)}
               />

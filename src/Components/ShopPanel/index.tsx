@@ -65,6 +65,10 @@ export function ShopPanel({
                     height: PREVIEW_IMAGE_HEIGHT,
                     width: '100%'
                   }}
+                  aria-label={
+                    getBestTranslation(shop.name_translations, language)
+                      ?.translation || ''
+                  }
                 />
               )}
               <Headline>
@@ -82,7 +86,7 @@ export function ShopPanel({
                   ?.translation || ''}
               </ShopDescription>
               <ShopAddress className={isDark ? 'dark-theme' : ''}>
-                <div>{t('main_page.address')}</div>
+                <div>{t('search.labels.address')}</div>
                 <div>{shop.address.street}</div>
                 <div>{shop.address.street2}</div>
                 <div>{shop.address.city}</div>
@@ -90,17 +94,19 @@ export function ShopPanel({
                 <div>{shop.address.country}</div>
                 <div>{shop.address.postal_code}</div>
                 <Link href={googleMapsUrl}>
-                  {t('main_page.get_directions')}
+                  {t('search.actions.get_directions')}
                 </Link>
               </ShopAddress>
             </ScrollableContent>
           </>
         )}
         {(isError || (!isLoading && !shop)) && (
-          <ScrollableContent>{t('main_page.location_error')}</ScrollableContent>
+          <ScrollableContent>
+            {t('search.results.location_error')}
+          </ScrollableContent>
         )}
         {isLoading && (
-          <ScrollableContent>{t('main_page.loading')}</ScrollableContent>
+          <ScrollableContent>{t('actions.loading')}</ScrollableContent>
         )}
         <FixedContent className="fixed-ltr">
           <Button
@@ -109,7 +115,7 @@ export function ShopPanel({
             onClick={onClose}
             shouldFitContainer
           >
-            {t('main_page.location_close')}
+            {t('search.results.location_close')}
           </Button>
         </FixedContent>
       </PanelWrapper>

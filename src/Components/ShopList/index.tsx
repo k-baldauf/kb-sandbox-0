@@ -37,12 +37,12 @@ export function ShopList({
       {(!!selectedCuisines.length || !!selectedTags.length) && (
         <FiltersContainer>
           <SearchFilter
-            label={t('main_page.cuisines_label')}
+            label={t('search.labels.cuisines_label')}
             selectedFilters={selectedCuisines}
             toggleFilter={(cuisine) => toggleFilter(cuisine, 'cuisines')}
           />
           <SearchFilter
-            label={t('main_page.tags_label')}
+            label={t('search.labels.tags_label')}
             selectedFilters={selectedTags}
             toggleFilter={(tag) => toggleFilter(tag, 'tags')}
           />
@@ -66,7 +66,7 @@ export function ShopList({
             iconAfter={<Icon icon={faArrowDown} />}
             shouldFitContainer
           >
-            <ShopName>{t('main_page.load_more_shops')}</ShopName>
+            <ShopName>{t('search.actions.load_more_shops')}</ShopName>
           </Button>
         )}
       </ShopListWrapper>

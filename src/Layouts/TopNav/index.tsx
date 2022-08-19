@@ -60,6 +60,7 @@ export function TopNav({
         <div style={{ display: 'flex' }}>
           <DesktopOnlyItems>
             <Button
+              aria-label={t('buttons.dark_mode')}
               appearance={ButtonAppearance.Subtle}
               iconBefore={<Icon icon={tciSun} />}
               onClick={() => setDarkMode(!isDarkMode)}
@@ -83,6 +84,7 @@ export function TopNav({
             />
           </DesktopOnlyItems>
           <MenuButton
+            aria-label={t('buttons.main_menu')}
             onClick={() => setMenuOpen(!isMenuOpen)}
             appearance={ButtonAppearance.Subtle}
             iconBefore={<Icon icon={faBars} />}
